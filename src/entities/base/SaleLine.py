@@ -22,7 +22,6 @@ class SaleLine:
 
     # Main methods
     def get_subtotal(self):
-        st = 0.0
         if self.get_art().get_promotion():
             promo = self.get_art().get_promotion()
             st = self.get_uds() * self.get_art().get_list_price() * promo.get_perc()
