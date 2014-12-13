@@ -89,6 +89,8 @@ class Organization():
             # cost and sold
             cost_sale = 0.0
             sold_sale = 0.0
+            sold_line = 0.0
+            cost_line = 0.0
             for sale in agent.sales:
                 if sale.get_date().year == year:
                     sold_line = 0.0
