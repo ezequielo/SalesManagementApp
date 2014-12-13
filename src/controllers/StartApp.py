@@ -9,4 +9,4 @@ if __name__ == "__main__":
     dict = DataLoader.loadSampleData()
 
     controller = MainController(dict)
-    controller.printMenu()
+    controller.menu_redirect()
