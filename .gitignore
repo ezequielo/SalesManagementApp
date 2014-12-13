@@ -4,3 +4,6 @@
 
 # compiled files
 *.pyc
+
+# sonar files
+.sonar
