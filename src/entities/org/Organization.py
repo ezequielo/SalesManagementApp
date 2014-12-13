@@ -45,47 +45,47 @@ class Organization():
         return self.org_name + " CIF:" + self.cif
 
     # Main methods
-    def addAgent(self, agent):
+    def add_agent(self, agent):
         agent.set_org(self)
         self.agent_list.append(agent)
 
-    def removeAgent(self, agent):
+    def remove_agent(self, agent):
         agent.set_org(None)
         self.agent_list.remove(agent)
 
-    def addCategory(self, category):
+    def add_category(self, category):
         category.set_org(self)
         self.categories.append(category)
 
-    def removeCategory(self, category):
+    def remove_category(self, category):
         category.set_org(None)
         self.categories.remove(category)
 
-    def addPromotion(self, promotion):
+    def add_promotion(self, promotion):
         promotion.set_org(self)
         self.promotions.append(promotion)
 
-    def removePromotions(self, promotion):
+    def remove_promotions(self, promotion):
         promotion.set_org(None)
         self.promotions.remove(promotion)
 
     def best_agent(self):
-        max = 0.0
+        num_max = 0.0
         best_agent = None
         for agent in self.agent_list:
-            if agent.getTotal() > max:
-                max = agent.getTotal()
+            if agent.getTotal() > num_max:
+                num_max = agent.getTotal()
                 best_agent = agent
         return best_agent
 
-    def anual_balance(self,year):
+    def annual_balance(self, year):
         total_cost = 0.0
         total_sold = 0.0
         total_comm = 0.0
         total_revenue = 0.0
 
         for agent in self.agent_list:
-            # comisiones
+            # commissions
             total_comm = total_comm + agent.getComisiones()
             # cost and sold
             cost_sale = 0.0
@@ -95,29 +95,29 @@ class Organization():
                     sold_line = 0.0
                     cost_line = 0.0
                     for line in sale.lines:
-                        sold_line = sold_line + line.getSubtotal()
+                        sold_line = sold_line + line.get_subtotal()
                         cost_line = cost_line + line.get_uds() * line.art.get_cost()
-                sold_sale = total_sold+sold_line
-                cost_sale = total_cost+cost_line
-            total_cost = total_cost+cost_sale
+                sold_sale = total_sold + sold_line
+                cost_sale = total_cost + cost_line
+            total_cost = total_cost + cost_sale
             total_sold = total_sold + sold_sale
         total_revenue = total_sold - total_cost-total_comm
         return total_revenue
 
-    def quarter_balance(self,quarter):
+    def quarter_balance(self, quarter):
         if quarter == 1:
-            month_list = [1,2,3]
+            month_list = [1, 2, 3]
         elif quarter == 2:
-            month_list = [4,5,6]
+            month_list = [4, 5, 6]
         elif quarter == 3:
-            month_list = [7,8,9]
+            month_list = [7, 8, 9]
         else:
-            month_list = [10,11,12]
+            month_list = [10, 11, 12]
         total_cost = 0.0
         total_sold = 0.0
         total_comm = 0.0
         for agent in self.agent_list:
-            # comisiones
+            # commissiones
             total_comm = total_comm + agent.getComisiones()
             # cost and sold
             cost_sale = 0.0
