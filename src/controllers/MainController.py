@@ -44,6 +44,6 @@ class MainController:
         if option == 1:
             OrgController.printOrg(self, self.org, self.commissions)
         elif option == 2:
-            SalesController.manageSales(self, self.org)
+            SalesController.manage_sales(self, self.org)
         elif option == 0:
             print "\nBye!\n"
