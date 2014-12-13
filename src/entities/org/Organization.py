@@ -1,6 +1,7 @@
 __author__ = 'ezequiel'
 import datetime
 
+
 class Organization():
     # Constructor
     def __init__(self, cif, org_name):
@@ -73,8 +74,8 @@ class Organization():
         num_max = 0.0
         best_agent = None
         for agent in self.agent_list:
-            if agent.getTotal() > num_max:
-                num_max = agent.getTotal()
+            if agent.get_total() > num_max:
+                num_max = agent.get_total()
                 best_agent = agent
         return best_agent
 
@@ -84,7 +85,7 @@ class Organization():
         total_comm = 0.0
         for agent in self.agent_list:
             # commissions
-            total_comm = total_comm + agent.getComisiones()
+            total_comm = total_comm + agent.getcommissiones()
             # cost and sold
             cost_sale = 0.0
             sold_sale = 0.0
@@ -99,7 +100,7 @@ class Organization():
                 cost_sale = total_cost + cost_line
             total_cost += cost_sale
             total_sold += sold_sale
-        total_revenue = total_sold - total_cost-total_comm
+        total_revenue = total_sold - total_cost - total_comm
         return total_revenue
 
     def quarter_balance(self, quarter):
@@ -125,11 +126,11 @@ class Organization():
                 cost_line = 0.0
                 if sale.get_date().year == datetime.datetime.today().year and sale.get_date().month in month_list:
                     for line in sale.lines:
-                        sold_line = sold_line + line.getSubtotal()
+                        sold_line = sold_line + line.get_sbtotal()
                         cost_line = cost_line + line.get_uds() * line.art.get_cost()
                 sold_sale = total_sold + sold_line
                 cost_sale = total_cost + cost_line
             total_cost += cost_sale
             total_sold += sold_sale
-        total_revenue = total_sold - total_cost-total_comm
+        total_revenue = total_sold - total_cost - total_comm
         return total_revenue
