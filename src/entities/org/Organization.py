@@ -97,11 +97,11 @@ class Organization():
                     for line in sale.lines:
                         sold_line = sold_line + line.getSubtotal()
                         cost_line = cost_line + line.get_uds() * line.art.get_cost()
-                sold_sale=total_sold+sold_line
-                cost_sale=total_cost+cost_line
-            total_cost=total_cost+cost_sale
-            total_sold=total_sold+sold_sale
-        total_revenue=total_sold-total_cost-total_comm
+                sold_sale = total_sold+sold_line
+                cost_sale = total_cost+cost_line
+            total_cost = total_cost+cost_sale
+            total_sold = total_sold + sold_sale
+        total_revenue = total_sold - total_cost-total_comm
         return total_revenue
 
     def quarter_balance(self,quarter):
@@ -129,9 +129,9 @@ class Organization():
                     for line in sale.lines:
                         sold_line = sold_line + line.getSubtotal()
                         cost_line = cost_line + line.get_uds() * line.art.get_cost()
-                sold_sale=total_sold+sold_line
-                cost_sale=total_cost+cost_line
-            total_cost=total_cost+cost_sale
-            total_sold=total_sold+sold_sale
-        total_revenue=total_sold-total_cost-total_comm
+                sold_sale=total_sold + sold_line
+                cost_sale=total_cost + cost_line
+            total_cost=total_cost + cost_sale
+            total_sold=total_sold + sold_sale
+        total_revenue = total_sold - total_cost-total_comm
         return total_revenue
