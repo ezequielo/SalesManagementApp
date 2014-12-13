@@ -3,11 +3,13 @@ from src.utils.Menus import Menus
 
 __author__ = 'ezequiel'
 
+
 class SalesController:
     """
     SalesController class allows the application to create, list and remove sales
     given an agent. It also allows to display agent's info
     """
+
     def __init__(self):
         pass
 
@@ -54,7 +56,6 @@ class SalesController:
             print("Invalid ID !\n")
             mc.menu_redirect()
 
-
     @staticmethod
     def list_sales(agent):
         """
@@ -65,8 +66,7 @@ class SalesController:
         print("Sales:\n")
         for sale in agent.sales:
             print(sale)
-            print("-"*30)
-
+            print("-" * 30)
 
     @staticmethod
     def create_sale(agent, org):
@@ -78,7 +78,7 @@ class SalesController:
         """
         lines = []
         menu_back = False
-        while menu_back == False:
+        while not menu_back:
             option = Menus.create_sale_menu()
             if option == 0:
                 menu_back = True
@@ -87,7 +87,6 @@ class SalesController:
             elif option == 2:
                 SalesController.confirm_sale(lines, agent)
                 menu_back = True
-
 
     @staticmethod
     def add_line(org, lines):
@@ -98,7 +97,7 @@ class SalesController:
         :return: Void
         """
         selected_article = None
-        while selected_article == None:
+        while selected_article is None:
             art_code = raw_input("Article code: ")
             for category in org.categories:
                 for article in category.list_articulos:
@@ -108,7 +107,6 @@ class SalesController:
 
         line = SaleLine(uds, selected_article)
         lines.append(line)
-
 
     @staticmethod
     def confirm_sale(lines, agent):
@@ -135,14 +133,14 @@ class SalesController:
         print("\nSelect a sale to remove:\n")
         i = 1
         for sale in agent.sales:
-            print("\t#" + str(i) + " Date: " + str(sale.get_date()) + " - State: "+sale.State + " - Total: " \
+            print("\t#" + str(i) + " Date: " + str(sale.get_date()) + " - State: " + sale.State + " - Total: "
                   + str(sale.get_total()))
-            i = i + 1
+            i += 1
         selection = 0
         while selection < 1 or selection > i:
             selection = int(raw_input("Sale number: "))
 
-        agent.sales.pop(selection-1)
+        agent.sales.pop(selection - 1)
 
     @staticmethod
     def print_summary(agent):
@@ -152,10 +150,10 @@ class SalesController:
         :return: Void
         """
         print("Agent Info\n")
-        print("\t Name:\t" + agent.firstname + " "+agent.lastname)
+        print("\t Name:\t" + agent.firstname + " " + agent.lastname)
         print("\t Age:\t" + str(agent.get_edad()))
         print("\t Email:\t" + agent.email)
         print("\t Base:\t" + str(agent.base))
         print("\t Commissions:\t" + str(agent.getComisiones()))
         print("\t Total:\t" + str(agent.getTotal()))
-        print("-"*60)
+        print("-" * 60)
