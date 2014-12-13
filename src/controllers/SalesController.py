@@ -17,7 +17,8 @@ class SalesController:
     def manage_sales(mc, org):
         """
         This is the main controller for managing sales. Its aim is
-        to redirect to specific functions
+        to redirect to specific function
+
         :param mc: MainController
         :param org: Demo Organization
         :return: Void
@@ -40,6 +41,7 @@ class SalesController:
     def select_agent(mc, agent_list):
         """
         Helper method for selecting agents given its ID
+
         :param mc: MainController
         :param agent_list: Agent list
         :return: Chosen agent
@@ -60,6 +62,7 @@ class SalesController:
     def list_sales(agent):
         """
         Prints a list of sales of the current agent
+
         :param agent: Current selected agent
         :return: Void
         """
@@ -72,6 +75,7 @@ class SalesController:
     def create_sale(agent, org):
         """
         Controller function for creating and adding sales to the current agent's sales list
+
         :param agent: Selected agent
         :param org: Organization
         :return: Void
@@ -92,6 +96,7 @@ class SalesController:
     def add_line(org, lines):
         """
         Helper function whose aim is to creating and adding SaleLines to the current sale
+
         :param org: Organization
         :param lines: List of lines in the current sale
         :return: Void
@@ -112,6 +117,7 @@ class SalesController:
     def confirm_sale(lines, agent):
         """
         Helper function that adds all lines and generates an invoice.
+
         :param lines: List of SaleLines
         :param agent: Current selected agent
         :return: Void
@@ -127,6 +133,7 @@ class SalesController:
     def remove_sale(agent):
         """
         This method allows users to delete a sale from the current agent
+
         :param agent: Current agent
         :return: Void
         """
@@ -146,6 +153,7 @@ class SalesController:
     def print_summary(agent):
         """
         Prints a summary of the current agent, including full name, email, age and salary
+        
         :param agent: Current selected agent
         :return: Void
         """
