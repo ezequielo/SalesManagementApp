@@ -72,7 +72,7 @@ class Agent:
             for line in sale.lines:
                 article = line.get_art()
                 if article.get_commission():
-                    comm_percentage = article.commission.get_perc()
+                    comm_percentage = article.commission.get_percentage()
                 else:
                     cat_list = self.org.get_categories()
                     for category in cat_list:
@@ -80,12 +80,12 @@ class Agent:
                                 if art.get_ean13() == article.get_ean13():
                                     if category.get_commission():
                                         commissions = category.get_commission()
-                                        comm_percentage = commissions.get_perc()
+                                        comm_percentage = commissions.get_percentage()
                                 else:
                                     comm_percentage = 0.0
-                comm_art = article.get_listprice() * comm_percentage
+                comm_art = article.get_list_price() * comm_percentage
                 comm_line = comm_art * line.get_uds()
-                commissions = commissions + comm_line
+                commissions += comm_line
         return commissions
 
     def get_total(self):
@@ -109,7 +109,7 @@ class Agent:
                                 comm_percentage = 0.0
             comm_art = article.get_list_price() * comm_percentage
             comm_line = comm_art * line.get_uds()
-            commissions = commissions + comm_line
+            commissions += comm_line
         total = self.base + commissions
         return total
 
