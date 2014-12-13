@@ -82,8 +82,6 @@ class Organization():
         total_cost = 0.0
         total_sold = 0.0
         total_comm = 0.0
-        total_revenue = 0.0
-
         for agent in self.agent_list:
             # commissions
             total_comm = total_comm + agent.getComisiones()
@@ -117,7 +115,7 @@ class Organization():
         total_sold = 0.0
         total_comm = 0.0
         for agent in self.agent_list:
-            # commissiones
+            # commissions
             total_comm = total_comm + agent.getComisiones()
             # cost and sold
             cost_sale = 0.0
@@ -129,9 +127,9 @@ class Organization():
                     for line in sale.lines:
                         sold_line = sold_line + line.getSubtotal()
                         cost_line = cost_line + line.get_uds() * line.art.get_cost()
-                sold_sale=total_sold + sold_line
-                cost_sale=total_cost + cost_line
-            total_cost=total_cost + cost_sale
-            total_sold=total_sold + sold_sale
+                sold_sale = total_sold + sold_line
+                cost_sale = total_cost + cost_line
+            total_cost = total_cost + cost_sale
+            total_sold = total_sold + sold_sale
         total_revenue = total_sold - total_cost-total_comm
         return total_revenue
