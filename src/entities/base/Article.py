@@ -55,7 +55,7 @@ class Article:
 
     # Support methods
     def __str__(self):
-        return str(self.ean13) + " - " + self.art_name + " list price: " + str(self.listprice)
+        return str(self.ean13) + " - " + self.art_name + " list price: " + str(self.list_price)
 
     def add_promotion(self, promotion):
         self.promotion.append(promotion)
