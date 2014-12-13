@@ -1,77 +1,66 @@
 __author__ = 'ezequiel'
 
+
 class Promotion:
-
     # Constructor
-
-    def __init__(self, name, perc, min):
+    def __init__(self, name, percentage, minim):
         self.name = name
-        self.perc = perc
-        self.min = min
-        self.list_articulos = []
+        self.percentage = percentage
+        self.minim = minim
+        self.article_list = []
         self.org = None
         self.promotion = None
 
     # Getters and setters
-
     def get_name(self):
         return self.name
-
 
     def set_name(self, name):
         self.name = name
 
+    def get_percentage(self):
+        return self.percentage
 
-    def get_perc(self):
-        return self.perc
+    def set_percentage(self, percentage):
+        self.percentage = percentage
 
-    def set_perc(self, perc):
-        self.perc = perc
+    def get_minim(self):
+        return self.minim
 
-
-    def get_min(self):
-        return self.min
-
-    def set_min(self, min):
-        self.min = min
-
+    def set_minim(self, minim):
+        self.minim = minim
 
     def get_org(self):
         return self.org
 
     def set_org(self, org):
-        self.org=org
+        self.org = org
 
     def get_promotion(self):
         return self.org
 
     def set_promotion(self, promotion):
-        self.promotion=promotion
-
+        self.promotion = promotion
 
     def __str__(self):
-        return self.name+ " - " +str(self.perc)
+        return self.name + " - " + str(self.percentage)
+
     # Main methods
-
-
-    def addArticle(self, articulo):
-        articulo.set_promotion(self)
-        self.list_articulos.append(articulo)
-        for art in self.list_articulos:
-            if art.ean13 == articulo.ean13:
-                self.list_articulos.append(articulo)
+    def add_article(self, article):
+        article.set_promotion(self)
+        self.article_list.append(article)
+        for art in self.article_list:
+            if art.ean13 == article.ean13:
+                self.article_list.append(article)
                 return True
             else:
                 return False
 
-
-    def removeArticle(self, articulo):
-        articulo.set_promotion(None)
-        for art in self.list_articulos:
-            if art.ean13 == articulo.ean13:
-                self.list_articulos.remove(articulo)
+    def remove_article(self, article):
+        article.set_promotion(None)
+        for art in self.article_list:
+            if art.ean13 == article.ean13:
+                self.article_list.remove(article)
                 return True
             else:
                 return False
-
-
