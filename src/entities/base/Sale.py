@@ -1,61 +1,57 @@
 __author__ = 'ezequiel'
 from datetime import datetime
+
+
 class Sale:
-
     # Constructor
-
     def __init__(self):
-        self.date = self.GenerateDate()
-        self.State = 'pending'
+        self.date = self.generate_date()
+        self.state = 'pending'
         self.lines = []
 
     # Getter and setters
-
     def get_date(self):
         return self.date
 
     def get_lines(self):
         return self.lines
 
-    def set_lines(self,lines):
+    def set_lines(self, lines):
         self.lines = lines
 
     def add_line(self, line):
         self.lines.append(line)
+
     def remove_line(self, id_art):
         self.lines.remove(id_art)
 
-
     # Support methods
-
-    def GenerateDate(self):
+    def generate_date(self):
         return datetime.now()
 
-
     # Main methods
-
     def set_state(self, state):
-        self.State = state
+        self.state = state
 
-    def get_State(self):
-        return self.State
+    def get_state(self):
+        return self.state
 
-    def getTotal(self):
+    def get_total(self):
         total = 0.0
         for linea in self.lines:
-            total = total + linea.getSubtotal()
+            total = total + linea.get_subtotal()
         return total
 
     def __str__(self):
-        return str(self.get_date()) + " - State: "+self.State + " - Total: " + str(self.getTotal())
+        return str(self.get_date()) + " - State: " + self.state + " - Total: " + str(self.get_total())
 
-    def printInvoice(self):
+    def print_invoice(self):
         cad = "################################################\n"
-        cad = cad+str(self.get_date()) + " - State: "+self.State
+        cad = cad + str(self.get_date()) + " - State: " + self.state
         cad = cad +"\n\n"
         for linea in self.get_lines():
-            cad = cad+"+"+str(linea)+"\n"
+            cad = cad + "+"+str(linea)+"\n"
         cad = cad+"\n"
-        cad = cad+"\t\tTotal: "+str(self.getTotal())
-        cad =cad +"\n"+"################################################"
+        cad = cad + "\t\tTotal: "+str(self.get_total())
+        cad = cad + "\n" + "################################################"
         print cad
