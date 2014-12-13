@@ -91,6 +91,8 @@ class Agent:
     def get_total(self):
         commissions = 0.0
         comm_percentage = 0.0
+        article = None
+        line = None
         for sale in self.sales:
             for line in sale.get_lines():
                 article = line.get_art()
