@@ -48,10 +48,10 @@ class Sale:
     def print_invoice(self):
         cad = "################################################\n"
         cad = cad + str(self.get_date()) + " - State: " + self.state
-        cad = cad +"\n\n"
-        for linea in self.get_lines():
-            cad = cad + "+"+str(linea)+"\n"
-        cad = cad+"\n"
-        cad = cad + "\t\tTotal: "+str(self.get_total())
+        cad += "\n\n"
+        for line in self.get_lines():
+            cad = cad + "+" + str(line) + "\n"
+        cad += "\n"
+        cad = cad + "\t\tTotal: " + str(self.get_total())
         cad = cad + "\n" + "################################################"
         print cad
