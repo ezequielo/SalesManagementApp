@@ -3,9 +3,8 @@ __author__ = 'ezequiel'
 from MainController import MainController
 from DataLoader import DataLoader
 
-
 # load sample data
-data = DataLoader.loadSampleData()
+dict = DataLoader.loadSampleData()
 
-controller = MainController(data)
+controller = MainController(dict)
 controller.printMenu()
