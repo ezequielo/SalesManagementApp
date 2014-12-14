@@ -5,6 +5,7 @@ __author__ = 'ezequiel'
 
 
 class PromotionController():
+
     def __init__(self):
         pass
 

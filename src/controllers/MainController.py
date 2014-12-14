@@ -7,25 +7,25 @@ from src.utils.Menus import Menus
 
 class MainController:
     """
-    MainController is the class that models the
-    controller for the terminal-based interface.
+    MainControler class
+    MainController is the class that models the controller for the terminal-based interface.
     """
     def __init__(self, sample_data):
         """
         Init method for MainController
 
         :param sample_data: Dictionary with the organization's data
-        :return: A MainController instance
+        :return: An instance of MainController
         """
+
         self.org = sample_data["organization"]
         self.commissions = sample_data["commissions"]
 
     def menu_redirect(self):
         """
-        Redirect the user to another menu depending on their option
-
-        :return: Void
+        Redirect the user to another controller depending on the selected option
         """
+
         option = Menus.main_controller_menu()
         if option == 1:
             OrgController.manage_org(self, self.org, self.commissions)

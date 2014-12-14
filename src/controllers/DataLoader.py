@@ -10,12 +10,29 @@ __author__ = 'ezequiel'
 
 
 class DataLoader:
+    """
+    DataLoader class
+    This is a class that allows to load some sample data for the demo
+    """
 
     def __init__(self):
+        """
+        Init method
+        Creates and return an instance of DataLoader
+
+        :return: A DataLoader object
+        """
+
         pass
 
     @staticmethod
     def load_sampledata():
+        """
+        Load sample data function
+        It's the actual static method that allows load demo data into the application
+
+        :return: A sample data dictionary
+        """
 
         sample_data = {}
 

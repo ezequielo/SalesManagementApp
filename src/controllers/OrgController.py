@@ -7,12 +7,32 @@ __author__ = 'ezequiel'
 
 
 class OrgController:
+    """
+    Class OrgController
+    This class is responsible of the management area. Listing, creating and
+    deleting of every model are the common options
+    """
 
     def __init__(self):
+        """
+        Init method
+        Instantiate an object of the class OrgController
+
+        :return: OrgController object
+        """
+
         pass
 
     @staticmethod
     def manage_org(mc, org, commissions):
+        """
+        Manage organization function
+        This is the method that does the actual work when it comes to manage the organization.
+
+        :param mc: MainController instance
+        :param org: Organization
+        :param commissions: List of commission objects
+        """
 
         menu_back = False
         while not menu_back:
@@ -30,6 +50,13 @@ class OrgController:
 
     @staticmethod
     def metrics_controller(org):
+        """
+        Metrics controller
+        Allows the user to choose any from the available metrics and call the right methods to generate them
+
+        :param org: Organization
+        """
+
         menu_back = False
         while not menu_back:
             option = Menus.org_metrics_menu()
@@ -45,18 +72,38 @@ class OrgController:
 
     @staticmethod
     def quarter_balance(org):
+        """
+        Quarter balance
+        Displays balance information about the given quarter.
+
+        :param org: Organization
+        """
+
         quarter = OrgController.get_quarter()
         revenue = org.quarter_balance(quarter)
         print "Total revenue in Q" + str(quarter) + ": " + str(revenue)
 
     @staticmethod
     def annual_balance(org):
+        """
+        Annual balance
+        Displays balance information about the given year.
+
+        :param org: Organization
+        """
+
         year = OrgController.get_year()
         revenue = org.anual_balance(year)
         print "Total revenue in " + str(year) + ": " + str(revenue)
 
     @staticmethod
     def get_quarter():
+        """
+        Allows the user to input the quarter they want to see
+
+        :return: Integer representing the quarter
+        """
+
         quarter = 0
         while quarter > 4 or quarter < 1:
             quarter = int(raw_input("Quarter: "))
@@ -64,6 +111,12 @@ class OrgController:
 
     @staticmethod
     def get_year():
+        """
+        Allows the user to insert the year of the annual balance
+
+        :return: Year
+        """
+
         year = 0
         while year < 0:
             year = int(raw_input("Year: "))
