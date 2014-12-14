@@ -8,15 +8,19 @@ install:
     - pip install coveralls
     - pip install radon
     - pip install pep8
+    - pip install pylint
 # command to run tests
 script:
     - py.test --cov . --cov-report term-missing
-    - radon cc ./src/. ./test/.
-    - radon mi ./src/. ./test/.
-    - radon raw ./src/. ./test/.
+
 after_success:
+    - radon cc src/ , test/
+    - radon mi src/ , test/
+    - radon raw src/ , test/
     - coveralls
-    - pep8 ./src/. ./test/.
+    - pep8 src/ , test/
+    - pylint src/ , test
+    
 notifications:
     emails:
         - n_3_n3@hotmail.com
