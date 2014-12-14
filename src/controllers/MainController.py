@@ -7,7 +7,7 @@ from src.utils.Menus import Menus
 
 class MainController:
     """
-    MainControler class
+    MainController class
     MainController is the class that models the controller for the terminal-based interface.
     """
     def __init__(self, sample_data):

@@ -83,7 +83,8 @@ class AgentController():
         i = 1
         for agent in org.agent_list:
             print("-"*30)
-            print("#"+str(i) + " - First name: "+agent.first_name+" Last name" + agent.last_name + " ID: "+ agent.agent_id)
+            print("#"+str(i) + " - First name: "+agent.first_name+" Last name"
+                  + agent.last_name + " ID: " + agent.agent_id)
             i += 1
         selection = 0
         while selection < 1 or selection > i:

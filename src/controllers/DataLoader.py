@@ -56,7 +56,7 @@ class DataLoader:
 
         # create category
         cat1 = Category(001, "CAT1", "Sample Category")
-        cat2 = Category(002, "CAT2", "Luxure goods")
+        cat2 = Category(002, "CAT2", "Luxury goods")
         o.add_category(cat1)
         o.add_category(cat2)
         cat1.add_article(art1)

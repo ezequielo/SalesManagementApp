@@ -45,7 +45,7 @@ class Sale:
 
         update exist sale line
 
-        :param line: new sale line
+        :param lines: new sale line list
 
         """
         self.lines = lines
@@ -71,7 +71,8 @@ class Sale:
         self.lines.remove(id_art)
 
     # Support methods
-    def generate_date(self):
+    @staticmethod
+    def generate_date():
         """
 
         Generate the actual date

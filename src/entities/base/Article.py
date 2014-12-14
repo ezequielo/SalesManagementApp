@@ -25,7 +25,7 @@ class Article:
         self.cost = cost
         self.list_price = list_price
         self.commission = None
-        self.promotion =  None
+        self.promotion = None
         # fill ean13 code
         self.set_ean13(cod)
 
@@ -159,7 +159,7 @@ class Article:
         Set commission
         Allow to change actual the agent commission when this article is sold
 
-        :param list_price: new the agent commission when this article is sold
+        :param commission: new the agent commission when this article is sold
 
         """
         self.commission = commission
@@ -197,7 +197,8 @@ class Article:
         """
         self.promotion.remove(name)
 
-    def check_ean13(self, code):
+    @staticmethod
+    def check_ean13(code):
         """
 
         Check_ean13

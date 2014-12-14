@@ -100,7 +100,7 @@ class Menus():
         print("-"*60)
         print("1. Best agent")
         print("2. Quarter balance")
-        print("3. Anual balance")
+        print("3. Annual balance")
         print("0. Back")
         print("-"*60)
         option = raw_input("Select an option: ")
@@ -152,7 +152,7 @@ class Menus():
 
         print("-"*60)
         print("1. Remove article")
-        print("2. Add comission")
+        print("2. Add commission")
         print("3. Remove commission")
         print("0. Back")
         print("")
