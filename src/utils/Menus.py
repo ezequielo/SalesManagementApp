@@ -1,9 +1,13 @@
 __author__ = 'ezequiel'
 
+
 class Menus():
     """
     This is a helper class for printing menus and retrieving user's options
     """
+
+    def __init__(self):
+        pass
 
     @staticmethod
     def main_controller_menu():
@@ -12,6 +16,7 @@ class Menus():
 
         :return: User's option
         """
+
         option = None
         while option != 1 and option != 2 and option != 0:
             print("-"*60)
@@ -26,9 +31,15 @@ class Menus():
 
     @staticmethod
     def sales_main_menu():
+        """
+        Prints sales main menu and asks the user for an option
+
+        :return: User's option
+        """
+
         option = ''
         while option == '':
-            print "#"*60 + "\n" + "\t"*4 + "Sales Management\n" +"#"*60
+            print "#"*60 + "\n" + "\t"*4 + "Sales Management\n" + "#"*60
             print "-"*60
             print "1. List sales"
             print "2. Create new sale"
@@ -42,6 +53,12 @@ class Menus():
 
     @staticmethod
     def create_sale_menu():
+        """
+        Displays the operational menu for creating sales
+
+        :return: Agent's option
+        """
+
         print "-"*60
         print "Create new sale"
         print "-"*60
@@ -54,7 +71,13 @@ class Menus():
 
     @staticmethod
     def org_main_controller():
-        print "#"*60+"\n"+"\t"*6+ "Organization menu\n"+ "#"*60
+        """
+        Displays the main menu for management options
+
+        :return: User's option
+        """
+
+        print "#"*60+"\n"+"\t"*6 + "Organization menu\n" + "#"*60
         print "Select option"
         print "-"*60
         print "1. Manage agents"
@@ -68,6 +91,12 @@ class Menus():
 
     @staticmethod
     def org_metrics_menu():
+        """
+        Displays the metrics menu
+
+        :return: User's option
+        """
+
         print "-"*60
         print "1. Best agent"
         print "2. Quarter balance"
@@ -77,9 +106,14 @@ class Menus():
         option = raw_input("Select an option: ")
         return int(option)
 
-
     @staticmethod
     def agent_menu():
+        """
+        Displays the agent management menu
+
+        :return: User's option
+        """
+
         print "-"*60
         print "1. List agents"
         print "2. Create new agent"
@@ -91,6 +125,12 @@ class Menus():
 
     @staticmethod
     def prom_menu():
+        """
+        Displays the promotion management menu
+
+        :return: User's option
+        """
+
         print "-"*60
         print "1. List promotions"
         print "2. Create new promotion"
@@ -104,18 +144,29 @@ class Menus():
 
     @staticmethod
     def art_menu():
+        """
+        Displays the article management menu
+
+        :return: User's option
+        """
+
         print "-"*60
         print "1. Remove article"
         print "2. Add comission"
         print "3. Remove commission"
         print "0. Back"
         print ""
-        option= raw_input("Option: ")
+        option = raw_input("Option: ")
         return int(option)
-
 
     @staticmethod
     def subcat_menu():
+        """
+        Displays subcat main menu
+
+        :return: User's option
+        """
+
         print "-"*60
         print "1. Remove category"
         print "2. Set commission"
@@ -128,6 +179,12 @@ class Menus():
 
     @staticmethod
     def cat_main_menu():
+        """
+        Displays the categories and articles main menu
+
+        :return: User's option
+        """
+
         print "-"*60
         print "1. List categories"
         print "2. List articles"
