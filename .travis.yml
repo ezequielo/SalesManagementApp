@@ -19,7 +19,6 @@ after_success:
     - radon raw src/ , test/
     - coveralls
     - pep8 src/ , test/
-    - pylint src/ , test
     
 notifications:
     emails:
