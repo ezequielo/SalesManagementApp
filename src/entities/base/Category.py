@@ -161,6 +161,19 @@ class Category:
         self.org = org
 
     # Main methods
+
+    def is_article(self, art):
+        """
+        Helper method that returns True if the article is in the list or False if it is not
+        :param art: Article to be checked
+
+        """
+
+        for article in self.article_list:
+            if article.ean13 == art.ean13:
+                return True
+        return False
+
     def add_article(self, art):
         """
 
@@ -170,7 +183,11 @@ class Category:
         :param art: new article
 
         """
-        self.article_list.append(art)
+        if not self.is_article(art):
+            self.article_list.append(art)
+            return True
+        else:
+            return False
 
     def remove_article(self, art):
         """
@@ -181,12 +198,12 @@ class Category:
         :param art: article by this is removed
 
         """
-        remove = False
-        for article in self.article_list:
-            if article.ean13 == art.ean13:
-                remove = True
-        if remove:
+
+        if self.is_article(art):
             self.article_list.remove(art)
+            return True
+        else:
+            return False
 
     def __str__(self):
         """
