@@ -72,7 +72,7 @@ class PromotionController():
         name = raw_input("Promotion name: ")
         perc = int(raw_input("Promotion percentage: "))
         prom = Promotion(name, perc, 0)
-        org.addPromotion(prom)
+        org.add_promotion(prom)
         print("The promotion " + prom.name + " has been successfully created")
 
     @staticmethod
@@ -88,7 +88,7 @@ class PromotionController():
         i = 1
         for promotion in org.promotions:
             print("-"*30)
-            print("# " + str(i) + " " + promotion.name + " %: " + str(promotion.perc))
+            print("# " + str(i) + " " + promotion.name + " %: " + str(promotion.percentage))
             i += 1
         selected_prom = 0
         while selected_prom < 1 or selected_prom > i:
@@ -110,7 +110,7 @@ class PromotionController():
         while selected_article is None:
             art_code = raw_input("Article code: ")
             for category in org.categories:
-                for article in category.list_articulos:
+                for article in category.article_list:
                     if article.ean13 == art_code:
                         selected_article = article
         return selected_article
@@ -138,7 +138,7 @@ class PromotionController():
 
         promotion = PromotionController.select_promotion(org)
         article = PromotionController.select_article(org)
-        promotion.addArticle(article)
+        promotion.add_article(article)
         print("Article successfully added")
 
     @staticmethod
@@ -152,5 +152,5 @@ class PromotionController():
 
         promotion = PromotionController.select_promotion(org)
         article = PromotionController.select_article(org)
-        promotion.removeArticle(article)
+        promotion.remove_article(article)
         print("Article successfully removed")

@@ -79,7 +79,7 @@ class SaleLine:
         """
         if self.get_art().get_promotion():
             promo = self.get_art().get_promotion()
-            st = self.get_uds() * self.get_art().get_list_price() * promo.get_perc()
+            st = self.get_uds() * self.get_art().get_list_price() * promo.get_percentage()
         else:
             st = self.get_uds() * self.get_art().get_list_price()
         return st

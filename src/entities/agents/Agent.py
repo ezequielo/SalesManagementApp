@@ -212,7 +212,7 @@ class Agent:
                 else:
                     cat_list = self.org.get_categories()
                     for category in cat_list:
-                            for art in category.get_list_articulos():
+                            for art in category.get_article_list():
                                 if art.get_ean13() == article.get_ean13():
                                     if category.get_commission():
                                         commissions = category.get_commission()

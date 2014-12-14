@@ -44,9 +44,9 @@ class DataLoader:
         a1 = Agent("A-001", "Paco", "Martin", "1/1/1990", 200.0, "pmartin@samplecompany.com")
         a2 = Agent("A-002", "Maria", "Fernandez", "10/5/1992", 210.0, "mfernandez@samplecompany.com")
         a3 = Agent("A-003", "JA", "Garcia", "7/12/1989", 210.0, "jag@samplecompany.com")
-        o.addAgent(a1)
-        o.addAgent(a2)
-        o.addAgent(a3)
+        o.add_agent(a1)
+        o.add_agent(a2)
+        o.add_agent(a3)
 
         # create sample articles
         art1 = Article("123776789087", "Article 1", 12.0, 20.0)
@@ -57,12 +57,12 @@ class DataLoader:
         # create category
         cat1 = Category(001, "CAT1", "Sample Category")
         cat2 = Category(002, "CAT2", "Luxure goods")
-        o.addCategory(cat1)
-        o.addCategory(cat2)
-        cat1.add_articulo(art1)
-        cat1.add_articulo(art2)
-        cat1.add_articulo(art3)
-        cat2.add_articulo(art4)
+        o.add_category(cat1)
+        o.add_category(cat2)
+        cat1.add_article(art1)
+        cat1.add_article(art2)
+        cat1.add_article(art3)
+        cat2.add_article(art4)
 
         # create commissions
         c1 = Commission("Commission 10%", 0.1)
@@ -76,33 +76,33 @@ class DataLoader:
         # create promotions
         p1 = Promotion("Black Friday deals", 0.3, 0.0)
         p2 = Promotion("Basic goods", 0.01, 0.0)
-        o.addPromotion(p1)
-        o.addPromotion(p2)
-        p1.addArticle(art4)
-        p2.addArticle(art2)
+        o.add_promotion(p1)
+        o.add_promotion(p2)
+        p1.add_article(art4)
+        p2.add_article(art2)
 
         # create sales
         # agent 1
-        sale1 = a1.crearVenta()
+        sale1 = a1.create_sale()
         l1 = SaleLine(1, art1)
         l2 = SaleLine(2, art2)
         sale1.add_line(l1)
         sale1.add_line(l2)
         sale1.set_state("pending")
 
-        sale2 = a1.crearVenta()
+        sale2 = a1.create_sale()
         l3 = SaleLine(3, art3)
         sale2.add_line(l3)
         sale2.set_state("pending")
 
         # agent 2
-        sale3 = a2.crearVenta()
+        sale3 = a2.create_sale()
         l4 = SaleLine(25, art3)
         sale3.add_line(l4)
         sale3.set_state("pending")
 
         # agent 3
-        sale5 = a3.crearVenta()
+        sale5 = a3.create_sale()
         l4 = SaleLine(3, art4)
         l5 = SaleLine(1, art2)
         l6 = SaleLine(2, art1)
@@ -111,7 +111,7 @@ class DataLoader:
         sale5.add_line(l6)
         sale5.set_state("pending")
 
-        sale6 = a3.crearVenta()
+        sale6 = a3.create_sale()
         l7 = SaleLine(8, art3)
         l8 = SaleLine(1, art2)
         sale6.add_line(l7)

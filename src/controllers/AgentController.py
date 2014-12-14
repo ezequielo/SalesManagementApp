@@ -68,7 +68,7 @@ class AgentController():
         email = raw_input("e-Mail: ")
         base = float(raw_input("Base: "))
         a = Agent(a_id, firstname, lastname, birthdate, base, email)
-        org.addAgent(a)
+        org.add_agent(a)
         print("The agent with ID " + a.agent_id + "has been successfully created and added to the company")
 
     @staticmethod
@@ -83,7 +83,7 @@ class AgentController():
         i = 1
         for agent in org.agent_list:
             print("-"*30)
-            print("#"+str(i) + " - First name: "+agent.firstname+" Last name" + agent.lastname + " ID: "+agent.agent_id)
+            print("#"+str(i) + " - First name: "+agent.first_name+" Last name" + agent.last_name + " ID: "+ agent.agent_id)
             i += 1
         selection = 0
         while selection < 1 or selection > i:

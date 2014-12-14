@@ -93,7 +93,7 @@ class OrgController:
         """
 
         year = OrgController.get_year()
-        revenue = org.anual_balance(year)
+        revenue = org.annual_balance(year)
         print("Total revenue in " + str(year) + ": " + str(revenue))
 
     @staticmethod

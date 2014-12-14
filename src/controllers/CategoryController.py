@@ -70,7 +70,7 @@ class CategoryController():
         """
 
         for category in org.categories:
-            for article in category.list_articulos:
+            for article in category.article_list:
                 print(article)
 
     @staticmethod
@@ -192,7 +192,7 @@ class CategoryController():
         cost = float(raw_input("Cost: "))
         listprice = float(raw_input("List price: "))
         article = Article(code, name, cost, listprice)
-        category.add_articulo(article)
+        category.add_article(article)
 
     @staticmethod
     def subart_controller(org, commissions):
@@ -233,7 +233,7 @@ class CategoryController():
         while art is None:
             art_code = raw_input("Article code: ")
             for category in org.categories:
-                for article in category.list_articulos:
+                for article in category.article_list:
                     if article.ean13 == art_code:
                         art = article
         print("Article "+art.ean13+" selected.")
@@ -251,11 +251,11 @@ class CategoryController():
 
         remove = False
         for category in org.categories:
-            for article in category.list_articulos:
+            for article in category.article_list:
                 if article == a:
                     remove = True
             if remove:
-                category.remove_articulo(a)
+                category.remove_article(a)
         print("The article has been successfully removed")
 
     @staticmethod
@@ -271,7 +271,7 @@ class CategoryController():
         comm_object = None
         i = 1
         for commission in commissions:
-            print("# " + str(i) + " " + commission.com_name + " " + str(commission.perc))
+            print("# " + str(i) + " " + commission.com_name + " " + str(commission.percentage))
             i += 1
         selected_comm2 = 0
         while selected_comm2 < 1 or selected_comm2 > i:

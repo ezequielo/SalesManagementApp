@@ -253,7 +253,7 @@ class Organization():
         total_comm = 0.0
         for agent in self.agent_list:
             # commissions
-            total_comm = total_comm + agent.getcommissiones()
+            total_comm = total_comm + agent.get_commissions()
             # cost and sold
             cost_sale = 0.0
             sold_sale = 0.0
@@ -305,7 +305,7 @@ class Organization():
                 cost_line = 0.0
                 if sale.get_date().year == datetime.datetime.today().year and sale.get_date().month in month_list:
                     for line in sale.lines:
-                        sold_line = sold_line + line.get_sbtotal()
+                        sold_line = sold_line + line.get_subtotal()
                         cost_line = cost_line + line.get_uds() * line.art.get_cost()
                 sold_sale = total_sold + sold_line
                 cost_sale = total_cost + cost_line

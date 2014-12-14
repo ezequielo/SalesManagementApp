@@ -113,7 +113,7 @@ class SalesController:
         while selected_article is None:
             art_code = raw_input("Article code: ")
             for category in org.categories:
-                for article in category.list_articulos:
+                for article in category.article_list:
                     if article.ean13 == art_code:
                         selected_article = article
         uds = int(raw_input("Units: "))
@@ -131,11 +131,11 @@ class SalesController:
         """
 
         if lines:
-            sale = agent.crearVenta()
+            sale = agent.create_sale()
             for line in lines:
                 sale.add_line(line)
             print("Your sale has been successfully created:\n")
-            sale.printInvoice()
+            sale.print_invoice()
 
     @staticmethod
     def remove_sale(agent):
@@ -148,7 +148,7 @@ class SalesController:
         print("\nSelect a sale to remove:\n")
         i = 1
         for sale in agent.sales:
-            print("\t#" + str(i) + " Date: " + str(sale.get_date()) + " - State: " + sale.State + " - Total: "
+            print("\t#" + str(i) + " Date: " + str(sale.get_date()) + " - State: " + sale.state + " - Total: "
                   + str(sale.get_total()))
             i += 1
         selection = 0
@@ -166,10 +166,10 @@ class SalesController:
         """
 
         print("Agent Info\n")
-        print("\t Name:\t" + agent.firstname + " " + agent.lastname)
-        print("\t Age:\t" + str(agent.get_edad()))
+        print("\t Name:\t" + agent.first_name + " " + agent.last_name)
+        print("\t Age:\t" + str(agent.get_age()))
         print("\t Email:\t" + agent.email)
         print("\t Base:\t" + str(agent.base))
-        print("\t Commissions:\t" + str(agent.getComisiones()))
-        print("\t Total:\t" + str(agent.getTotal()))
+        print("\t Commissions:\t" + str(agent.get_commissions()))
+        print("\t Total:\t" + str(agent.get_total()))
         print("-" * 60)
