@@ -3,7 +3,6 @@ __author__ = 'ezequiel'
 from src.entities.agents.Agent import Agent
 from src.entities.base.Article import Article
 from src.entities.base.SaleLine import SaleLine
-from src.entities.base.Sale import Sale
 from src.entities.agents.Commission import Commission
 
 from unittest import TestCase
