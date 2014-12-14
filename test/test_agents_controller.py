@@ -5,7 +5,7 @@ from src.entities.org.Organization import Organization
 from src.controllers.AgentController import AgentController
 
 
-class Test_Agents_Controller(TestCase):
+class TestAgentsController(TestCase):
     """
 
     Test class for testing Agent Controller methods

@@ -4,9 +4,10 @@ from unittest import TestCase
 from mockito import *
 from src.controllers.DataLoader import DataLoader
 from src.entities.agents.Agent import Agent
-from src.controllers.SalesController import SalesController
 from src.entities.base.Article import Article
-class Test_SalesController(TestCase):
+
+
+class TestSalesController(TestCase):
     def test_select_agent_true(self):
         sample_data = DataLoader.load_sampledata()
         org = sample_data["organization"]
