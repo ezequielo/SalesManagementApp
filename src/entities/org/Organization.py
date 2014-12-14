@@ -273,7 +273,7 @@ class Organization():
         total_revenue = total_sold - total_cost - total_comm
         return total_revenue
 
-    def quarter_balance(self, quarter):
+    def quarter_balance(self, year, quarter):
         """
 
         Quarter balance
@@ -303,7 +303,7 @@ class Organization():
             for sale in agent.sales:
                 sold_line = 0.0
                 cost_line = 0.0
-                if sale.get_date().year == datetime.datetime.today().year and sale.get_date().month in month_list:
+                if sale.get_date().year == year and sale.get_date().month in month_list:
                     for line in sale.lines:
                         sold_line = sold_line + line.get_subtotal()
                         cost_line = cost_line + line.get_uds() * line.art.get_cost()
