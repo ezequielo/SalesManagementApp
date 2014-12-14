@@ -5,7 +5,7 @@ class SaleLine:
     """
 
     Sale line class
-    This class is responsible of modeling the sae lines of a given sale.
+    This class is responsible of modeling the sale lines of a given sale.
 
     """
     def __init__(self, uds, art):
