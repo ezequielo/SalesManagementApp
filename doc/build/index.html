@@ -8,7 +8,7 @@
     
     <title>Welcome to SalesManagementApp’s documentation! &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -24,15 +24,25 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="#" />
-    <link rel="next" title="Class Agent" href="agent.html" /> 
+    <link rel="next" title="Class Agent" href="agent.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="agent.html" title="Class Agent"
              accesskey="N">next</a> |</li>
@@ -49,14 +59,20 @@
 <h1>Welcome to SalesManagementApp&#8217;s documentation!<a class="headerlink" href="#welcome-to-salesmanagementapp-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>SalesManagementApp is a sample project developed in the subject of Software Quality in order to learn how to
 improve and mantain the code, use tools like code inspectors, CI tools, etc.</p>
-<p>#Project status
+</div>
+<div class="section" id="project-info">
+<h1>Project Info<a class="headerlink" href="#project-info" title="Permalink to this headline">¶</a></h1>
+<p># Project status
 The project version is v0.2 and it&#8217;s still under development</p>
-<p>#Authors</p>
+<p># Authors</p>
 <ul class="simple">
 <li>Ezequiel Rodríguez Atencia - <a class="reference external" href="mailto:ezequielra1&#37;&#52;&#48;gmail&#46;com">ezequielra1<span>&#64;</span>gmail<span>&#46;</span>com</a></li>
 <li>José Ignacion Fernández seda - <a class="reference external" href="mailto:yoiiii121&#37;&#52;&#48;gmail&#46;com">yoiiii121<span>&#64;</span>gmail<span>&#46;</span>com</a></li>
 </ul>
-<p>#Contents:</p>
+</div>
+<div class="section" id="content">
+<h1>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h1>
+<p>Entities:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="agent.html">Class Agent</a></li>
@@ -67,6 +83,36 @@ The project version is v0.2 and it&#8217;s still under development</p>
 <li class="toctree-l1"><a class="reference internal" href="promotion.html">Class Promotion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sale.html">Class Sale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="saleline.html">Class Sale Line</a></li>
+</ul>
+</div>
+<p>Controllers:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_controller.html">Class Main Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent_controller.html">Class Agent Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category_controller.html">Class Category Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="org_controller.html">Class Organization Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="promotion_controller.html">Class Promotion Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_loader.html">Class Data Loader</a></li>
+</ul>
+</div>
+<p>Test classes:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="test_agent.html">Class TestAgent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_article.html">Class TestArticle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_category.html">Class TestCategory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_organization.html">Class TestOrganization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_promotion.html">Class TestPromotion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_sale.html">Class TestSale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_saleline.html">Class TestSaleLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_sales_controller.html">Class TestSaleController</a></li>
+</ul>
+</div>
+<p>User&#8217;s guide:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Instructions:</a></li>
 </ul>
 </div>
 </div>
@@ -88,17 +134,16 @@ The project version is v0.2 and it&#8217;s still under development</p>
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Welcome to SalesManagementApp&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#project-info">Project Info</a></li>
+<li><a class="reference internal" href="#content">Content</a><ul>
+</ul>
+</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
   <h4>Next topic</h4>
   <p class="topless"><a href="agent.html"
                         title="next chapter">Class Agent</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -122,6 +167,9 @@ The project version is v0.2 and it&#8217;s still under development</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="agent.html" title="Class Agent"
              >next</a> |</li>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>test.test_category &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for test.test_category</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Nacho-w7&#39;</span>
+
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">src.entities.base.Article</span> <span class="kn">import</span> <span class="n">Article</span>
+<span class="kn">from</span> <span class="nn">src.entities.base.Category</span> <span class="kn">import</span> <span class="n">Category</span>
+
+
+<div class="viewcode-block" id="TestCategory"><a class="viewcode-back" href="../../test_category.html#test.test_category.TestCategory">[docs]</a><span class="k">class</span> <span class="nc">TestCategory</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test category</span>
+<span class="sd">    Test class for testing the most interesting methods from category</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TestCategory.test_remove_article"><a class="viewcode-back" href="../../test_category.html#test.test_category.TestCategory.test_remove_article">[docs]</a>    <span class="k">def</span> <span class="nf">test_remove_article</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test remove article</span>
+<span class="sd">        Asserts that the article list is correctly updated after a remove operation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">art1</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="s">&quot;123776789087&quot;</span><span class="p">,</span> <span class="s">&quot;Article 1&quot;</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+        <span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="p">(</span><span class="mo">001</span><span class="p">,</span> <span class="s">&quot;CAT1&quot;</span><span class="p">,</span> <span class="s">&quot;Sample Category&quot;</span><span class="p">)</span>
+        <span class="n">cat1</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">article_list</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">remove_article</span><span class="p">(</span><span class="n">art1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">article_list</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">remove_article</span><span class="p">(</span><span class="n">art1</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="TestCategory.test_add_article"><a class="viewcode-back" href="../../test_category.html#test.test_category.TestCategory.test_add_article">[docs]</a>    <span class="k">def</span> <span class="nf">test_add_article</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test remove article</span>
+<span class="sd">        Asserts that the article list is correctly updated after an adding operation</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">art1</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="s">&quot;123776789087&quot;</span><span class="p">,</span> <span class="s">&quot;Article 1&quot;</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+        <span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="p">(</span><span class="mo">001</span><span class="p">,</span> <span class="s">&quot;CAT1&quot;</span><span class="p">,</span> <span class="s">&quot;Sample Category&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art1</span><span class="p">))</span>
+</pre></div></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

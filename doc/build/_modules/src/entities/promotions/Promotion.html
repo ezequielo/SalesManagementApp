@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.entities.promotions.Promotion &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.entities.promotions.Promotion</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="Promotion"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion">[docs]</a><span class="k">class</span> <span class="nc">Promotion</span><span class="p">:</span>
+    <span class="c"># Constructor</span>
+<div class="viewcode-block" id="Promotion.__init__"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">percentage</span><span class="p">,</span> <span class="n">minim</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Init method for Promotion of an article</span>
+
+<span class="sd">        :param name: promotion name</span>
+<span class="sd">        :param percentage: percentage reduction of article</span>
+<span class="sd">        :param minim: minim reduction number</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentage</span> <span class="o">=</span> <span class="n">percentage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minim</span> <span class="o">=</span> <span class="n">minim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="c"># Getters and setters</span></div>
+<div class="viewcode-block" id="Promotion.get_name"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get promotion name</span>
+
+<span class="sd">        :return: promotion name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</div>
+<div class="viewcode-block" id="Promotion.set_name"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.set_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Update actual promotion name</span>
+
+<span class="sd">        :param name: New promotion name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</div>
+<div class="viewcode-block" id="Promotion.get_percentage"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.get_percentage">[docs]</a>    <span class="k">def</span> <span class="nf">get_percentage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get reduction percentage of article</span>
+
+<span class="sd">        :return: reduction percentage</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentage</span>
+</div>
+<div class="viewcode-block" id="Promotion.set_percentage"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.set_percentage">[docs]</a>    <span class="k">def</span> <span class="nf">set_percentage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">percentage</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Update actual reduction percentage of article</span>
+
+<span class="sd">        :param percentage: new reduction percentage</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentage</span> <span class="o">=</span> <span class="n">percentage</span>
+</div>
+<div class="viewcode-block" id="Promotion.get_minim"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.get_minim">[docs]</a>    <span class="k">def</span> <span class="nf">get_minim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get minim reduction percentage of article</span>
+
+<span class="sd">        :return: minim reduction percentage</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">minim</span>
+</div>
+<div class="viewcode-block" id="Promotion.set_minim"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.set_minim">[docs]</a>    <span class="k">def</span> <span class="nf">set_minim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">minim</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Update actual minim reduction percentage of article</span>
+
+<span class="sd">        :param minim: new minim reduction percentage</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minim</span> <span class="o">=</span> <span class="n">minim</span>
+</div>
+<div class="viewcode-block" id="Promotion.get_org"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.get_org">[docs]</a>    <span class="k">def</span> <span class="nf">get_org</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get cif of organization</span>
+
+<span class="sd">        :return: cif</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">org</span>
+</div>
+<div class="viewcode-block" id="Promotion.set_org"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.set_org">[docs]</a>    <span class="k">def</span> <span class="nf">set_org</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update actual cif of organization</span>
+
+<span class="sd">        :param org: new cif</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org</span> <span class="o">=</span> <span class="n">org</span>
+</div>
+<div class="viewcode-block" id="Promotion.get_promotion"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.get_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">get_promotion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get promotion instance</span>
+
+<span class="sd">        :return: promotion</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">org</span>
+</div>
+<div class="viewcode-block" id="Promotion.set_promotion"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.set_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">set_promotion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">promotion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Update actual promotion instance</span>
+
+<span class="sd">        :param promotion: new promotion</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span> <span class="o">=</span> <span class="n">promotion</span>
+</div>
+<div class="viewcode-block" id="Promotion.__str__"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Print promotion information</span>
+
+<span class="sd">        :return: String instance</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">percentage</span><span class="p">)</span>
+
+    <span class="c"># Main methods</span>
+</div>
+<div class="viewcode-block" id="Promotion.is_article"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.is_article">[docs]</a>    <span class="k">def</span> <span class="nf">is_article</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method that returns True if the article is already in the list or False if it&#39;s not</span>
+
+<span class="sd">        :param art: Article to be checked</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">ean13</span> <span class="o">==</span> <span class="n">art</span><span class="o">.</span><span class="n">ean13</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Promotion.add_article"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.add_article">[docs]</a>    <span class="k">def</span> <span class="nf">add_article</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">article</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add new article to promotion</span>
+
+<span class="sd">        :param article:  new article</span>
+<span class="sd">        :return: if it correct what the article is added</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_article</span><span class="p">(</span><span class="n">article</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Promotion.remove_article"><a class="viewcode-back" href="../../../../promotion.html#src.entities.promotions.Promotion.Promotion.remove_article">[docs]</a>    <span class="k">def</span> <span class="nf">remove_article</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">article</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Remove an article to promotion</span>
+
+<span class="sd">        :param article:  exist article</span>
+<span class="sd">        :return: if it correct what the article is removed</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_article</span><span class="p">(</span><span class="n">article</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

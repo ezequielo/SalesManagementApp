@@ -8,7 +8,7 @@
     
     <title>Class Commission &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,15 +25,25 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
     <link rel="next" title="Class Organization" href="organization.html" />
-    <link rel="prev" title="Class Category" href="category.html" /> 
+    <link rel="prev" title="Class Category" href="category.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="organization.html" title="Class Organization"
              accesskey="N">next</a> |</li>
@@ -49,8 +59,117 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="class-commission">
-<h1>Class Commission<a class="headerlink" href="#class-commission" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-src.entities.agents.Commission">
+<span id="class-commission"></span><h1>Class Commission<a class="headerlink" href="#module-src.entities.agents.Commission" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.entities.agents.Commission.Commission">
+<em class="property">class </em><tt class="descclassname">src.entities.agents.Commission.</tt><tt class="descname">Commission</tt><big>(</big><em>com_name</em>, <em>percentage</em><big>)</big><a class="reference internal" href="_modules/src/entities/agents/Commission.html#Commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.agents.Commission.Commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commission class
+Responsible of modeling the commission objects</p>
+<dl class="method">
+<dt id="src.entities.agents.Commission.Commission.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>com_name</em>, <em>percentage</em><big>)</big><a class="reference internal" href="_modules/src/entities/agents/Commission.html#Commission.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.agents.Commission.Commission.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method
+Initializes and returns an instance of Commission</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>com_name</strong> &#8211; Commission name</li>
+<li><strong>percentage</strong> &#8211; Commission percentage</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An instance of Commission</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.entities.agents.Commission.Commission.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.entities.agents.Commission'</em><a class="headerlink" href="#src.entities.agents.Commission.Commission.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="src.entities.agents.Commission.Commission.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/agents/Commission.html#Commission.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.agents.Commission.Commission.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>String method
+Allows to print Commission objects in a more natural way</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String containing commission&#8217;s info</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.agents.Commission.Commission.get_com_name">
+<tt class="descname">get_com_name</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/agents/Commission.html#Commission.get_com_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.agents.Commission.Commission.get_com_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get commission name
+Returns the commission name of the commission objects that calls the method</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Commission name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.agents.Commission.Commission.get_percentage">
+<tt class="descname">get_percentage</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/agents/Commission.html#Commission.get_percentage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.agents.Commission.Commission.get_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get percentage
+Returns the commission percentage of the commission objects that calls the method</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Commission percentage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.agents.Commission.Commission.set_com_name">
+<tt class="descname">set_com_name</tt><big>(</big><em>com_name</em><big>)</big><a class="reference internal" href="_modules/src/entities/agents/Commission.html#Commission.set_com_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.agents.Commission.Commission.set_com_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set commission name
+Allows to reset the commission name to a new value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>com_name</strong> &#8211; Commission name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.agents.Commission.Commission.set_percentage">
+<tt class="descname">set_percentage</tt><big>(</big><em>percentage</em><big>)</big><a class="reference internal" href="_modules/src/entities/agents/Commission.html#Commission.set_percentage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.agents.Commission.Commission.set_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set percentage
+Allows to reset the commission percentage to a new value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>percentage</strong> &#8211; Value representing the new percentage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -65,11 +184,6 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="organization.html"
                         title="next chapter">Class Organization</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/commission.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -93,6 +207,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="organization.html" title="Class Organization"
              >next</a> |</li>

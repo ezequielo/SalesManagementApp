@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.entities.base.Category &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.entities.base.Category</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="Category"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category">[docs]</a><span class="k">class</span> <span class="nc">Category</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Category class</span>
+<span class="sd">    This class is responsible of modeling the category of many articles.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Category.__init__"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_cat</span><span class="p">,</span> <span class="n">cat_name</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Init method</span>
+<span class="sd">        Initializes an instance of Category class given the following parameters</span>
+
+<span class="sd">        :param id_cat: category identification</span>
+<span class="sd">        :param cat_name: category name</span>
+<span class="sd">        :param desc: description</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cat_name</span> <span class="o">=</span> <span class="n">cat_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_cat</span> <span class="o">=</span> <span class="n">id_cat</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">desc</span> <span class="o">=</span> <span class="n">desc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">commission</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="c"># Getter and setters</span>
+</div>
+<div class="viewcode-block" id="Category.get_article_list"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.get_article_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_article_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get article list</span>
+<span class="sd">        Return an article list</span>
+
+<span class="sd">        :return: article list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span>
+</div>
+<div class="viewcode-block" id="Category.set_article_list"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.set_article_list">[docs]</a>    <span class="k">def</span> <span class="nf">set_article_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">article_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set article list</span>
+<span class="sd">        Allow to change the actual article list</span>
+
+<span class="sd">        :param article_list: new article list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span> <span class="o">=</span> <span class="n">article_list</span>
+</div>
+<div class="viewcode-block" id="Category.get_cat_name"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.get_cat_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_cat_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get category name</span>
+<span class="sd">        Return a category name</span>
+
+<span class="sd">        :return: Category name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cat_name</span>
+</div>
+<div class="viewcode-block" id="Category.set_cat_name"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.set_cat_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_cat_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cat_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set category name</span>
+<span class="sd">        Allow to change the actual category name</span>
+
+<span class="sd">        :param cat_name: new category name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cat_name</span> <span class="o">=</span> <span class="n">cat_name</span>
+</div>
+<div class="viewcode-block" id="Category.get_desc"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.get_desc">[docs]</a>    <span class="k">def</span> <span class="nf">get_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get description</span>
+<span class="sd">        Return a category description</span>
+
+<span class="sd">        :return: category description</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">desc</span>
+</div>
+<div class="viewcode-block" id="Category.set_desc"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.set_desc">[docs]</a>    <span class="k">def</span> <span class="nf">set_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set description</span>
+<span class="sd">        Allow to change the actual category description</span>
+
+<span class="sd">        :param desc: new category description</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">desc</span> <span class="o">=</span> <span class="n">desc</span>
+</div>
+<div class="viewcode-block" id="Category.get_id_cat"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.get_id_cat">[docs]</a>    <span class="k">def</span> <span class="nf">get_id_cat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get id cat</span>
+<span class="sd">        Return actual identification of category</span>
+
+<span class="sd">        :return: identification category</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_cat</span>
+</div>
+<div class="viewcode-block" id="Category.set_id_cat"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.set_id_cat">[docs]</a>    <span class="k">def</span> <span class="nf">set_id_cat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_cat</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get id cat</span>
+<span class="sd">        Allow to change the actual identification of category</span>
+
+<span class="sd">        :param id_cat: new category identification</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_cat</span> <span class="o">=</span> <span class="n">id_cat</span>
+</div>
+<div class="viewcode-block" id="Category.get_commission"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.get_commission">[docs]</a>    <span class="k">def</span> <span class="nf">get_commission</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get commission</span>
+<span class="sd">        Returns the actual commission of sale an product</span>
+
+<span class="sd">        :return: Commission</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">commission</span>
+</div>
+<div class="viewcode-block" id="Category.set_commission"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.set_commission">[docs]</a>    <span class="k">def</span> <span class="nf">set_commission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commission</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set commission</span>
+<span class="sd">        Allow to change the actual commission of sale an product</span>
+
+<span class="sd">        :return: actual commission</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">commission</span> <span class="o">=</span> <span class="n">commission</span>
+</div>
+<div class="viewcode-block" id="Category.get_org"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.get_org">[docs]</a>    <span class="k">def</span> <span class="nf">get_org</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get organization cif</span>
+<span class="sd">        Return the organization cif</span>
+
+<span class="sd">        :return: organization cif</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">org</span>
+</div>
+<div class="viewcode-block" id="Category.set_org"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.set_org">[docs]</a>    <span class="k">def</span> <span class="nf">set_org</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set organization cif</span>
+<span class="sd">        Allow to change actual organization cif</span>
+
+<span class="sd">        :param org: new organization cif</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org</span> <span class="o">=</span> <span class="n">org</span>
+
+    <span class="c"># Main methods</span>
+</div>
+<div class="viewcode-block" id="Category.is_article"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.is_article">[docs]</a>    <span class="k">def</span> <span class="nf">is_article</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method that returns True if the article is in the list or False if it is not</span>
+<span class="sd">        :param art: Article to be checked</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">ean13</span> <span class="o">==</span> <span class="n">art</span><span class="o">.</span><span class="n">ean13</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Category.add_article"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.add_article">[docs]</a>    <span class="k">def</span> <span class="nf">add_article</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add article</span>
+<span class="sd">        Allow to add an article to article list</span>
+
+<span class="sd">        :param art: new article</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_article</span><span class="p">(</span><span class="n">art</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">art</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Category.remove_article"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.remove_article">[docs]</a>    <span class="k">def</span> <span class="nf">remove_article</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Remove article</span>
+<span class="sd">        Allow to remove an article to article list</span>
+
+<span class="sd">        :param art: article by this is removed</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_article</span><span class="p">(</span><span class="n">art</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">article_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">art</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+</div>
+<div class="viewcode-block" id="Category.__str__"><a class="viewcode-back" href="../../../../category.html#src.entities.base.Category.Category.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Print principal category information</span>
+
+<span class="sd">        :return: Category information</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id_cat</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">cat_name</span> <span class="o">+</span> <span class="s">&quot; desc</span><span class="se">\n</span><span class="s"> &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">desc</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

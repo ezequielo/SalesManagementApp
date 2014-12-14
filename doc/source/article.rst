@@ -2,7 +2,7 @@ Class Article
 ==============
 
 
-.. autoclass:: src.entities.base.Article
+.. automodule:: src.entities.base.Article
    :members:
    :undoc-members:
    :special-members:

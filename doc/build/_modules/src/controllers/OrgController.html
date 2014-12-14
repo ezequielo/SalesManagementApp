@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.controllers.OrgController &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.controllers.OrgController</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">src.utils.Menus</span> <span class="kn">import</span> <span class="n">Menus</span>
+<span class="kn">from</span> <span class="nn">src.controllers.PromotionController</span> <span class="kn">import</span> <span class="n">PromotionController</span>
+<span class="kn">from</span> <span class="nn">src.controllers.CategoryController</span> <span class="kn">import</span> <span class="n">CategoryController</span>
+<span class="kn">from</span> <span class="nn">src.controllers.AgentController</span> <span class="kn">import</span> <span class="n">AgentController</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="OrgController"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController">[docs]</a><span class="k">class</span> <span class="nc">OrgController</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class OrgController</span>
+<span class="sd">    This class is responsible of the management area. Listing, creating and</span>
+<span class="sd">    deleting of every model are the common options</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="OrgController.__init__"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Init method</span>
+<span class="sd">        Instantiate an object of the class OrgController</span>
+
+<span class="sd">        :return: OrgController object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="OrgController.manage_org"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController.manage_org">[docs]</a>    <span class="k">def</span> <span class="nf">manage_org</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span> <span class="n">org</span><span class="p">,</span> <span class="n">commissions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Manage organization function</span>
+<span class="sd">        This is the method that does the actual work when it comes to manage the organization.</span>
+
+<span class="sd">        :param mc: MainController instance</span>
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :param commissions: List of commission objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">menu_back</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">Menus</span><span class="o">.</span><span class="n">org_main_controller</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">AgentController</span><span class="o">.</span><span class="n">agent_controller</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">PromotionController</span><span class="o">.</span><span class="n">prom_controller</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">cat_controller</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">commissions</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">OrgController</span><span class="o">.</span><span class="n">metrics_controller</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">mc</span><span class="o">.</span><span class="n">menu_redirect</span><span class="p">()</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="OrgController.metrics_controller"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController.metrics_controller">[docs]</a>    <span class="k">def</span> <span class="nf">metrics_controller</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Metrics controller</span>
+<span class="sd">        Allows the user to choose any from the available metrics and call the right methods to generate them</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">menu_back</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">Menus</span><span class="o">.</span><span class="n">org_metrics_menu</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;The best agent is...&quot;</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">org</span><span class="o">.</span><span class="n">best_agent</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">OrgController</span><span class="o">.</span><span class="n">quarter_balance</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">OrgController</span><span class="o">.</span><span class="n">annual_balance</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="OrgController.quarter_balance"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController.quarter_balance">[docs]</a>    <span class="k">def</span> <span class="nf">quarter_balance</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Quarter balance</span>
+<span class="sd">        Displays balance information about the given quarter.</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Input a year: &quot;</span><span class="p">)</span>
+        <span class="n">quarter</span> <span class="o">=</span> <span class="n">OrgController</span><span class="o">.</span><span class="n">get_quarter</span><span class="p">()</span>
+        <span class="n">revenue</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">quarter_balance</span><span class="p">(</span><span class="n">quarter</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Total revenue in Q&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">quarter</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">revenue</span><span class="p">))</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="OrgController.annual_balance"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController.annual_balance">[docs]</a>    <span class="k">def</span> <span class="nf">annual_balance</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Annual balance</span>
+<span class="sd">        Displays balance information about the given year.</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">year</span> <span class="o">=</span> <span class="n">OrgController</span><span class="o">.</span><span class="n">get_year</span><span class="p">()</span>
+        <span class="n">revenue</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">annual_balance</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Total revenue in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">revenue</span><span class="p">))</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="OrgController.get_quarter"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController.get_quarter">[docs]</a>    <span class="k">def</span> <span class="nf">get_quarter</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allows the user to input the quarter they want to see</span>
+
+<span class="sd">        :return: Integer representing the quarter</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">quarter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">quarter</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">quarter</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">quarter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Quarter: &quot;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">quarter</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="OrgController.get_year"><a class="viewcode-back" href="../../../org_controller.html#src.controllers.OrgController.OrgController.get_year">[docs]</a>    <span class="k">def</span> <span class="nf">get_year</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allows the user to insert the year of the annual balance</span>
+
+<span class="sd">        :return: Year</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">year</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Year: &quot;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">year</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

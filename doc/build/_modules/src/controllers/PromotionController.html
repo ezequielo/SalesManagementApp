@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.controllers.PromotionController &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.controllers.PromotionController</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">src.entities.promotions.Promotion</span> <span class="kn">import</span> <span class="n">Promotion</span>
+<span class="kn">from</span> <span class="nn">src.utils.Menus</span> <span class="kn">import</span> <span class="n">Menus</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="PromotionController"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController">[docs]</a><span class="k">class</span> <span class="nc">PromotionController</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class PromotionController</span>
+<span class="sd">    This class is responsible of all operation related to promotions: Listing, creating and</span>
+<span class="sd">    deleting of promotions are the common options</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="PromotionController.__init__"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Init method</span>
+<span class="sd">        Instantiate an object of the class PromotionController</span>
+
+<span class="sd">        :return: PromotionController object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.prom_controller"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.prom_controller">[docs]</a>    <span class="k">def</span> <span class="nf">prom_controller</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Promotion controller method</span>
+<span class="sd">        This method is responsible of all operation related to promotions</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :return: PromotionController object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">menu_back</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">Menus</span><span class="o">.</span><span class="n">prom_menu</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">PromotionController</span><span class="o">.</span><span class="n">list_promotions</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">PromotionController</span><span class="o">.</span><span class="n">create_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">PromotionController</span><span class="o">.</span><span class="n">remove_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">PromotionController</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">PromotionController</span><span class="o">.</span><span class="n">remove_article</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.list_promotions"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.list_promotions">[docs]</a>    <span class="k">def</span> <span class="nf">list_promotions</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List promotion method</span>
+<span class="sd">        Responsible of displaying a list of promotions that belong to the organization</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">promotion</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">promotions</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">promotion</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.create_promotion"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.create_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">create_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create promotion method</span>
+<span class="sd">        This function aims to create a new promotion and add it to the organization&#39;s promotions list</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Promotion name: &quot;</span><span class="p">)</span>
+        <span class="n">perc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Promotion percentage: &quot;</span><span class="p">))</span>
+        <span class="n">prom</span> <span class="o">=</span> <span class="n">Promotion</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">perc</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">org</span><span class="o">.</span><span class="n">add_promotion</span><span class="p">(</span><span class="n">prom</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;The promotion &quot;</span> <span class="o">+</span> <span class="n">prom</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot; has been successfully created&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.select_promotion"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.select_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">select_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select promotion</span>
+<span class="sd">        Displays a list of the available promotion and allows the user to select a promotion from the list.</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :return: Promotion object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">promotion</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">promotions</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;# &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">promotion</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot; %: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">promotion</span><span class="o">.</span><span class="n">percentage</span><span class="p">))</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">selected_prom</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">selected_prom</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">selected_prom</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">selected_prom</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Select a promotion: &quot;</span><span class="p">))</span>
+        <span class="n">prom_object</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">promotions</span><span class="p">[</span><span class="n">selected_prom</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">prom_object</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.select_article"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.select_article">[docs]</a>    <span class="k">def</span> <span class="nf">select_article</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select article</span>
+<span class="sd">        Displays a list of the available articles and allows the user to select an article from the list.</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :return: Article object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">selected_article</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">while</span> <span class="n">selected_article</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">art_code</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Article code: &quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">category</span><span class="o">.</span><span class="n">article_list</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">ean13</span> <span class="o">==</span> <span class="n">art_code</span><span class="p">:</span>
+                        <span class="n">selected_article</span> <span class="o">=</span> <span class="n">article</span>
+        <span class="k">return</span> <span class="n">selected_article</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.remove_promotion"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.remove_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">remove_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove promotion method</span>
+<span class="sd">        Removes an promotion from the organization&#39;s promotion list</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">promotion</span> <span class="o">=</span> <span class="n">PromotionController</span><span class="o">.</span><span class="n">select_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+        <span class="n">org</span><span class="o">.</span><span class="n">promotions</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">promotion</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.add_article"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.add_article">[docs]</a>    <span class="k">def</span> <span class="nf">add_article</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add article</span>
+<span class="sd">        Given an article and a promotion objects, this function can add the article to the promotion.</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">promotion</span> <span class="o">=</span> <span class="n">PromotionController</span><span class="o">.</span><span class="n">select_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="n">PromotionController</span><span class="o">.</span><span class="n">select_article</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+        <span class="n">promotion</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Article successfully added&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PromotionController.remove_article"><a class="viewcode-back" href="../../../promotion_controller.html#src.controllers.PromotionController.PromotionController.remove_article">[docs]</a>    <span class="k">def</span> <span class="nf">remove_article</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove article method</span>
+<span class="sd">        Removes an article from the promotion</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">promotion</span> <span class="o">=</span> <span class="n">PromotionController</span><span class="o">.</span><span class="n">select_promotion</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="n">PromotionController</span><span class="o">.</span><span class="n">select_article</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+        <span class="n">promotion</span><span class="o">.</span><span class="n">remove_article</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Article successfully removed&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

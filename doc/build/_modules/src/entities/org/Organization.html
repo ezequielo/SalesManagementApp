@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.entities.org.Organization &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.entities.org.Organization</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="Organization"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization">[docs]</a><span class="k">class</span> <span class="nc">Organization</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Organization class</span>
+<span class="sd">    This class aim to models the organization objects and it also acts like an container of the organization&#39;s info</span>
+<span class="sd">    such as list of agents, promotions, categories, etc.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Organization.__init__"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cif</span><span class="p">,</span> <span class="n">org_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Init method</span>
+<span class="sd">        Creates a new instance of Organization</span>
+
+<span class="sd">        :param cif: Organization&#39;s ID</span>
+<span class="sd">        :param org_name: Organization&#39;s name</span>
+<span class="sd">        :return: Organization object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cif</span> <span class="o">=</span> <span class="n">cif</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org_name</span> <span class="o">=</span> <span class="n">org_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">categories</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c"># Getters and setters</span></div>
+<div class="viewcode-block" id="Organization.get_agent_list"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.get_agent_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_agent_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get agent list</span>
+<span class="sd">        Return a list of agent who work at the organization</span>
+
+<span class="sd">        :return: List of Agent objects</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span>
+</div>
+<div class="viewcode-block" id="Organization.set_agents"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.set_agents">[docs]</a>    <span class="k">def</span> <span class="nf">set_agents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set agents</span>
+<span class="sd">        Allows to replace the agents list of an organization with a new given list</span>
+
+<span class="sd">        :param agent_list: Agent list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span> <span class="o">=</span> <span class="n">agent_list</span>
+</div>
+<div class="viewcode-block" id="Organization.get_promotions"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.get_promotions">[docs]</a>    <span class="k">def</span> <span class="nf">get_promotions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get promotions list</span>
+<span class="sd">        Return a list of promotions of the organization</span>
+
+<span class="sd">        :return: List of Promotions objects</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">promotions</span>
+</div>
+<div class="viewcode-block" id="Organization.set_promotions"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.set_promotions">[docs]</a>    <span class="k">def</span> <span class="nf">set_promotions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">promotions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set promotions</span>
+<span class="sd">        Allows to replace the promotions list of an organization with a new given list</span>
+
+<span class="sd">        :param promotions: Promotions list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotions</span> <span class="o">=</span> <span class="n">promotions</span>
+</div>
+<div class="viewcode-block" id="Organization.get_categories"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.get_categories">[docs]</a>    <span class="k">def</span> <span class="nf">get_categories</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get categories list</span>
+<span class="sd">        Return a list of categories of the organization</span>
+
+<span class="sd">        :return: List of Categories objects</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">categories</span>
+</div>
+<div class="viewcode-block" id="Organization.set_categories"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.set_categories">[docs]</a>    <span class="k">def</span> <span class="nf">set_categories</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">categories</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set categories</span>
+<span class="sd">        Allows to replace the categories list of an organization with a new given list</span>
+
+<span class="sd">        :param categories: Categories list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">categories</span> <span class="o">=</span> <span class="n">categories</span>
+</div>
+<div class="viewcode-block" id="Organization.get_org_name"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.get_org_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_org_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get organization name</span>
+<span class="sd">        Returns an string containing the organization name of the organization object that calls the method</span>
+
+<span class="sd">        :return: Organization name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">org_name</span>
+</div>
+<div class="viewcode-block" id="Organization.set_org_name"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.set_org_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_org_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">org_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set organization name</span>
+<span class="sd">        Setter method that allows changing the organization name with for a give new name</span>
+
+<span class="sd">        :param org_name: New name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org_name</span> <span class="o">=</span> <span class="n">org_name</span>
+</div>
+<div class="viewcode-block" id="Organization.get_cif"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.get_cif">[docs]</a>    <span class="k">def</span> <span class="nf">get_cif</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get CIF</span>
+<span class="sd">        This method will return the organization ID</span>
+
+<span class="sd">        :return: Organization ID</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cif</span>
+</div>
+<div class="viewcode-block" id="Organization.set_cif"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.set_cif">[docs]</a>    <span class="k">def</span> <span class="nf">set_cif</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cif</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set CIF</span>
+<span class="sd">        This method allows changing the organization CIF given a new ID</span>
+
+<span class="sd">        :param cif: New organization ID</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cif</span> <span class="o">=</span> <span class="n">cif</span>
+</div>
+<div class="viewcode-block" id="Organization.__str__"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        String method</span>
+<span class="sd">        This method allows printing Organization objects in a easier way</span>
+
+<span class="sd">        :return: String containing organization info</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">org_name</span> <span class="o">+</span> <span class="s">&quot; CIF:&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cif</span>
+
+    <span class="c"># Main methods</span></div>
+<div class="viewcode-block" id="Organization.add_agent"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.add_agent">[docs]</a>    <span class="k">def</span> <span class="nf">add_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add agent method</span>
+<span class="sd">        Allows to add a new agent to the organization agents list</span>
+
+<span class="sd">        :param agent: Agent object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">set_org</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Organization.remove_agent"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.remove_agent">[docs]</a>    <span class="k">def</span> <span class="nf">remove_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Remove agent method</span>
+<span class="sd">        This method aims to remove a given agent from the organization agent list</span>
+
+<span class="sd">        :param agent: Agent to be removed</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">set_org</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Organization.add_category"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.add_category">[docs]</a>    <span class="k">def</span> <span class="nf">add_category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add category method</span>
+<span class="sd">        Allows to add a new category to the organization agents list</span>
+
+<span class="sd">        :param category: Category object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">category</span><span class="o">.</span><span class="n">set_org</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Organization.remove_category"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.remove_category">[docs]</a>    <span class="k">def</span> <span class="nf">remove_category</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Remove category method</span>
+<span class="sd">        This method aims to remove a given category from the organization category list</span>
+
+<span class="sd">        :param category: Category to be removed</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">category</span><span class="o">.</span><span class="n">set_org</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Organization.add_promotion"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.add_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">add_promotion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">promotion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add promotion method</span>
+<span class="sd">        Allows to add a new promotion to the organization agents list</span>
+
+<span class="sd">        :param promotion: Promotion object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">promotion</span><span class="o">.</span><span class="n">set_org</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">promotion</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Organization.remove_promotions"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.remove_promotions">[docs]</a>    <span class="k">def</span> <span class="nf">remove_promotions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">promotion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Remove promotion method</span>
+<span class="sd">        This method aims to remove a given promotion from the organization promotions list</span>
+
+<span class="sd">        :param promotion: Promotion to be removed</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">promotion</span><span class="o">.</span><span class="n">set_org</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotions</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">promotion</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Organization.best_agent"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.best_agent">[docs]</a>    <span class="k">def</span> <span class="nf">best_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Best agent</span>
+<span class="sd">        This method evaluates the agents who work at the organization an</span>
+<span class="sd">        returns the best on according to the sales results</span>
+
+<span class="sd">        :return: Agent object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num_max</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">best_agent</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_total</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">num_max</span><span class="p">:</span>
+                <span class="n">num_max</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_total</span><span class="p">()</span>
+                <span class="n">best_agent</span> <span class="o">=</span> <span class="n">agent</span>
+        <span class="k">return</span> <span class="n">best_agent</span>
+</div>
+<div class="viewcode-block" id="Organization.annual_balance"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.annual_balance">[docs]</a>    <span class="k">def</span> <span class="nf">annual_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Annual balance</span>
+<span class="sd">        Given a year, this method can return the total revenue of the year</span>
+
+<span class="sd">        :param year: Year to be evaluated</span>
+<span class="sd">        :return: Total revenue</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_cost</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">total_sold</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">total_comm</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span><span class="p">:</span>
+            <span class="c"># commissions</span>
+            <span class="n">total_comm</span> <span class="o">=</span> <span class="n">total_comm</span> <span class="o">+</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_commissions</span><span class="p">()</span>
+            <span class="c"># cost and sold</span>
+            <span class="n">cost_sale</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">sold_sale</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">sold_line</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">cost_line</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">for</span> <span class="n">sale</span> <span class="ow">in</span> <span class="n">agent</span><span class="o">.</span><span class="n">sales</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">sale</span><span class="o">.</span><span class="n">get_date</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">:</span>
+                    <span class="n">sold_line</span> <span class="o">=</span> <span class="mf">0.0</span>
+                    <span class="n">cost_line</span> <span class="o">=</span> <span class="mf">0.0</span>
+                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sale</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+                        <span class="n">sold_line</span> <span class="o">=</span> <span class="n">sold_line</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">get_subtotal</span><span class="p">()</span>
+                        <span class="n">cost_line</span> <span class="o">=</span> <span class="n">cost_line</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">get_uds</span><span class="p">()</span> <span class="o">*</span> <span class="n">line</span><span class="o">.</span><span class="n">art</span><span class="o">.</span><span class="n">get_cost</span><span class="p">()</span>
+                <span class="n">sold_sale</span> <span class="o">=</span> <span class="n">total_sold</span> <span class="o">+</span> <span class="n">sold_line</span>
+                <span class="n">cost_sale</span> <span class="o">=</span> <span class="n">total_cost</span> <span class="o">+</span> <span class="n">cost_line</span>
+            <span class="n">total_cost</span> <span class="o">+=</span> <span class="n">cost_sale</span>
+            <span class="n">total_sold</span> <span class="o">+=</span> <span class="n">sold_sale</span>
+        <span class="n">total_revenue</span> <span class="o">=</span> <span class="n">total_sold</span> <span class="o">-</span> <span class="n">total_cost</span> <span class="o">-</span> <span class="n">total_comm</span>
+        <span class="k">return</span> <span class="n">total_revenue</span>
+</div>
+<div class="viewcode-block" id="Organization.quarter_balance"><a class="viewcode-back" href="../../../../organization.html#src.entities.org.Organization.Organization.quarter_balance">[docs]</a>    <span class="k">def</span> <span class="nf">quarter_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">quarter</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Quarter balance</span>
+<span class="sd">        Given a quarter, this method can return the total revenue of the the quarter</span>
+
+<span class="sd">        :param quarter: Quarter to be evaluated</span>
+<span class="sd">        :return: Total revenue in the quarter</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">quarter</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">month_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">quarter</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">month_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">quarter</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">month_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">month_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+        <span class="n">total_cost</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">total_sold</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">total_comm</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_list</span><span class="p">:</span>
+            <span class="c"># commissions</span>
+            <span class="n">total_comm</span> <span class="o">=</span> <span class="n">total_comm</span> <span class="o">+</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_commissions</span><span class="p">()</span>
+            <span class="c"># cost and sold</span>
+            <span class="n">cost_sale</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">sold_sale</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">for</span> <span class="n">sale</span> <span class="ow">in</span> <span class="n">agent</span><span class="o">.</span><span class="n">sales</span><span class="p">:</span>
+                <span class="n">sold_line</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">cost_line</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="k">if</span> <span class="n">sale</span><span class="o">.</span><span class="n">get_date</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span> <span class="ow">and</span> <span class="n">sale</span><span class="o">.</span><span class="n">get_date</span><span class="p">()</span><span class="o">.</span><span class="n">month</span> <span class="ow">in</span> <span class="n">month_list</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sale</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+                        <span class="n">sold_line</span> <span class="o">=</span> <span class="n">sold_line</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">get_subtotal</span><span class="p">()</span>
+                        <span class="n">cost_line</span> <span class="o">=</span> <span class="n">cost_line</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">get_uds</span><span class="p">()</span> <span class="o">*</span> <span class="n">line</span><span class="o">.</span><span class="n">art</span><span class="o">.</span><span class="n">get_cost</span><span class="p">()</span>
+                <span class="n">sold_sale</span> <span class="o">=</span> <span class="n">total_sold</span> <span class="o">+</span> <span class="n">sold_line</span>
+                <span class="n">cost_sale</span> <span class="o">=</span> <span class="n">total_cost</span> <span class="o">+</span> <span class="n">cost_line</span>
+            <span class="n">total_cost</span> <span class="o">+=</span> <span class="n">cost_sale</span>
+            <span class="n">total_sold</span> <span class="o">+=</span> <span class="n">sold_sale</span>
+        <span class="n">total_revenue</span> <span class="o">=</span> <span class="n">total_sold</span> <span class="o">-</span> <span class="n">total_cost</span> <span class="o">-</span> <span class="n">total_comm</span>
+        <span class="k">return</span> <span class="n">total_revenue</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.entities.base.SaleLine &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.entities.base.SaleLine</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="SaleLine"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine">[docs]</a><span class="k">class</span> <span class="nc">SaleLine</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Sale line class</span>
+<span class="sd">    This class is responsible of modeling the sale lines of a given sale.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="SaleLine.__init__"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uds</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Init method</span>
+<span class="sd">        Initializes an instance of SaleLine class given the following parameters</span>
+
+<span class="sd">        :param uds: Number of units</span>
+<span class="sd">        :param art: Article object</span>
+<span class="sd">        :return: An instance of SaleLine class</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">art</span> <span class="o">=</span> <span class="n">art</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uds</span> <span class="o">=</span> <span class="n">uds</span>
+
+    <span class="c"># Getter and setters</span></div>
+<div class="viewcode-block" id="SaleLine.get_art"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine.get_art">[docs]</a>    <span class="k">def</span> <span class="nf">get_art</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get article</span>
+<span class="sd">        Returns an article object representing the article of the line</span>
+
+<span class="sd">        :return: Article object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">art</span>
+</div>
+<div class="viewcode-block" id="SaleLine.set_art"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine.set_art">[docs]</a>    <span class="k">def</span> <span class="nf">set_art</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">article</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set article</span>
+<span class="sd">        Allows to set an article to a given sale line</span>
+
+<span class="sd">        :param article: Article object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">art</span> <span class="o">=</span> <span class="n">article</span>
+</div>
+<div class="viewcode-block" id="SaleLine.get_uds"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine.get_uds">[docs]</a>    <span class="k">def</span> <span class="nf">get_uds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get units</span>
+<span class="sd">        Returns the number representing the sale line units</span>
+
+<span class="sd">        :return: Number of units</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">uds</span>
+</div>
+<div class="viewcode-block" id="SaleLine.set_uds"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine.set_uds">[docs]</a>    <span class="k">def</span> <span class="nf">set_uds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get units</span>
+<span class="sd">        Allows to set a new number units</span>
+
+<span class="sd">        :return: Number of units</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uds</span> <span class="o">=</span> <span class="n">uds</span>
+
+    <span class="c"># Main methods</span></div>
+<div class="viewcode-block" id="SaleLine.get_subtotal"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine.get_subtotal">[docs]</a>    <span class="k">def</span> <span class="nf">get_subtotal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get subtotal</span>
+<span class="sd">        This method is responsible of compute the subtotal of every line given its article and units.</span>
+
+<span class="sd">        :return: Line subtotal</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_art</span><span class="p">()</span><span class="o">.</span><span class="n">get_promotion</span><span class="p">():</span>
+            <span class="n">promo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_art</span><span class="p">()</span><span class="o">.</span><span class="n">get_promotion</span><span class="p">()</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_uds</span><span class="p">()</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_art</span><span class="p">()</span><span class="o">.</span><span class="n">get_list_price</span><span class="p">()</span> <span class="o">*</span> <span class="n">promo</span><span class="o">.</span><span class="n">get_percentage</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_uds</span><span class="p">()</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_art</span><span class="p">()</span><span class="o">.</span><span class="n">get_list_price</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">st</span>
+</div>
+<div class="viewcode-block" id="SaleLine.__str__"><a class="viewcode-back" href="../../../../saleline.html#src.entities.base.SaleLine.SaleLine.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        String method</span>
+<span class="sd">        Allows printing SaleLine objects in a natural way</span>
+
+<span class="sd">        :return: String containing the sale line info</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">art</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;uds: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_uds</span><span class="p">())</span> <span class="o">+</span> <span class="s">&#39; subtotal: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subtotal</span><span class="p">())</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

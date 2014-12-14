@@ -8,7 +8,7 @@
     
     <title>Class Sale Line &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -24,15 +24,29 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
-    <link rel="prev" title="Class Sale" href="sale.html" /> 
+    <link rel="next" title="Class Main Controller" href="main_controller.html" />
+    <link rel="prev" title="Class Sale" href="sale.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="main_controller.html" title="Class Main Controller"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="sale.html" title="Class Sale"
              accesskey="P">previous</a> |</li>
@@ -45,8 +59,132 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="class-sale-line">
-<h1>Class Sale Line<a class="headerlink" href="#class-sale-line" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-src.entities.base.SaleLine">
+<span id="class-sale-line"></span><h1>Class Sale Line<a class="headerlink" href="#module-src.entities.base.SaleLine" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.entities.base.SaleLine.SaleLine">
+<em class="property">class </em><tt class="descclassname">src.entities.base.SaleLine.</tt><tt class="descname">SaleLine</tt><big>(</big><em>uds</em>, <em>art</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sale line class
+This class is responsible of modeling the sale lines of a given sale.</p>
+<dl class="method">
+<dt id="src.entities.base.SaleLine.SaleLine.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>uds</em>, <em>art</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method
+Initializes an instance of SaleLine class given the following parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uds</strong> &#8211; Number of units</li>
+<li><strong>art</strong> &#8211; Article object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An instance of SaleLine class</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.entities.base.SaleLine.SaleLine.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.entities.base.SaleLine'</em><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.SaleLine.SaleLine.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>String method
+Allows printing SaleLine objects in a natural way</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String containing the sale line info</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.SaleLine.SaleLine.get_art">
+<tt class="descname">get_art</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine.get_art"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.get_art" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get article
+Returns an article object representing the article of the line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Article object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.SaleLine.SaleLine.get_subtotal">
+<tt class="descname">get_subtotal</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine.get_subtotal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.get_subtotal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get subtotal
+This method is responsible of compute the subtotal of every line given its article and units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Line subtotal</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.SaleLine.SaleLine.get_uds">
+<tt class="descname">get_uds</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine.get_uds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.get_uds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get units
+Returns the number representing the sale line units</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of units</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.SaleLine.SaleLine.set_art">
+<tt class="descname">set_art</tt><big>(</big><em>article</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine.set_art"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.set_art" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set article
+Allows to set an article to a given sale line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>article</strong> &#8211; Article object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.SaleLine.SaleLine.set_uds">
+<tt class="descname">set_uds</tt><big>(</big><em>uds</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/SaleLine.html#SaleLine.set_uds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.SaleLine.SaleLine.set_uds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get units
+Allows to set a new number units</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of units</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -58,11 +196,9 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="sale.html"
                         title="previous chapter">Class Sale</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/saleline.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="main_controller.html"
+                        title="next chapter">Class Main Controller</a></p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -86,6 +222,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="main_controller.html" title="Class Main Controller"
+             >next</a> |</li>
         <li class="right" >
           <a href="sale.html" title="Class Sale"
              >previous</a> |</li>

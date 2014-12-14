@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.controllers.DataLoader &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.controllers.DataLoader</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">src.entities.agents.Agent</span> <span class="kn">import</span> <span class="n">Agent</span>
+<span class="kn">from</span> <span class="nn">src.entities.agents.Commission</span> <span class="kn">import</span> <span class="n">Commission</span>
+<span class="kn">from</span> <span class="nn">src.entities.base.Article</span> <span class="kn">import</span> <span class="n">Article</span>
+<span class="kn">from</span> <span class="nn">src.entities.base.Category</span> <span class="kn">import</span> <span class="n">Category</span>
+<span class="kn">from</span> <span class="nn">src.entities.base.SaleLine</span> <span class="kn">import</span> <span class="n">SaleLine</span>
+<span class="kn">from</span> <span class="nn">src.entities.org.Organization</span> <span class="kn">import</span> <span class="n">Organization</span>
+<span class="kn">from</span> <span class="nn">src.entities.promotions.Promotion</span> <span class="kn">import</span> <span class="n">Promotion</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="DataLoader"><a class="viewcode-back" href="../../../data_loader.html#src.controllers.DataLoader.DataLoader">[docs]</a><span class="k">class</span> <span class="nc">DataLoader</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    DataLoader class</span>
+<span class="sd">    This is a class that allows to load some sample data for the demo</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DataLoader.__init__"><a class="viewcode-back" href="../../../data_loader.html#src.controllers.DataLoader.DataLoader.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Init method</span>
+<span class="sd">        Creates and return an instance of DataLoader</span>
+
+<span class="sd">        :return: A DataLoader object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="DataLoader.load_sampledata"><a class="viewcode-back" href="../../../data_loader.html#src.controllers.DataLoader.DataLoader.load_sampledata">[docs]</a>    <span class="k">def</span> <span class="nf">load_sampledata</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load sample data function</span>
+<span class="sd">        It&#39;s the actual static method that allows load demo data into the application</span>
+
+<span class="sd">        :return: A sample data dictionary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">sample_data</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c"># create organization</span>
+        <span class="n">o</span> <span class="o">=</span> <span class="n">Organization</span><span class="p">(</span><span class="s">&quot;ORG0001&quot;</span><span class="p">,</span> <span class="s">&quot;SampleCompany&quot;</span><span class="p">)</span>
+        <span class="n">sample_data</span><span class="p">[</span><span class="s">&quot;org&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span>
+
+        <span class="c"># create some agents</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s">&quot;A-001&quot;</span><span class="p">,</span> <span class="s">&quot;Paco&quot;</span><span class="p">,</span> <span class="s">&quot;Martin&quot;</span><span class="p">,</span> <span class="s">&quot;1/1/1990&quot;</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">,</span> <span class="s">&quot;pmartin@samplecompany.com&quot;</span><span class="p">)</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s">&quot;A-002&quot;</span><span class="p">,</span> <span class="s">&quot;Maria&quot;</span><span class="p">,</span> <span class="s">&quot;Fernandez&quot;</span><span class="p">,</span> <span class="s">&quot;10/5/1992&quot;</span><span class="p">,</span> <span class="mf">210.0</span><span class="p">,</span> <span class="s">&quot;mfernandez@samplecompany.com&quot;</span><span class="p">)</span>
+        <span class="n">a3</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s">&quot;A-003&quot;</span><span class="p">,</span> <span class="s">&quot;JA&quot;</span><span class="p">,</span> <span class="s">&quot;Garcia&quot;</span><span class="p">,</span> <span class="s">&quot;7/12/1989&quot;</span><span class="p">,</span> <span class="mf">210.0</span><span class="p">,</span> <span class="s">&quot;jag@samplecompany.com&quot;</span><span class="p">)</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">add_agent</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">add_agent</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">add_agent</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span>
+
+        <span class="c"># create sample articles</span>
+        <span class="n">art1</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="s">&quot;123776789087&quot;</span><span class="p">,</span> <span class="s">&quot;Article 1&quot;</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+        <span class="n">art2</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="s">&quot;003456000082&quot;</span><span class="p">,</span> <span class="s">&quot;Article 2&quot;</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">17.5</span><span class="p">)</span>
+        <span class="n">art3</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="s">&quot;783456789085&quot;</span><span class="p">,</span> <span class="s">&quot;Article 3&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+        <span class="n">art4</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="s">&quot;993116789000&quot;</span><span class="p">,</span> <span class="s">&quot;Article 4&quot;</span><span class="p">,</span> <span class="mf">35.0</span><span class="p">,</span> <span class="mf">62.0</span><span class="p">)</span>
+
+        <span class="c"># create category</span>
+        <span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="p">(</span><span class="mo">001</span><span class="p">,</span> <span class="s">&quot;CAT1&quot;</span><span class="p">,</span> <span class="s">&quot;Sample Category&quot;</span><span class="p">)</span>
+        <span class="n">cat2</span> <span class="o">=</span> <span class="n">Category</span><span class="p">(</span><span class="mo">002</span><span class="p">,</span> <span class="s">&quot;CAT2&quot;</span><span class="p">,</span> <span class="s">&quot;Luxury goods&quot;</span><span class="p">)</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">add_category</span><span class="p">(</span><span class="n">cat1</span><span class="p">)</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">add_category</span><span class="p">(</span><span class="n">cat2</span><span class="p">)</span>
+        <span class="n">cat1</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art1</span><span class="p">)</span>
+        <span class="n">cat1</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art2</span><span class="p">)</span>
+        <span class="n">cat1</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art3</span><span class="p">)</span>
+        <span class="n">cat2</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art4</span><span class="p">)</span>
+
+        <span class="c"># create commissions</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="n">Commission</span><span class="p">(</span><span class="s">&quot;Commission 10%&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">c2</span> <span class="o">=</span> <span class="n">Commission</span><span class="p">(</span><span class="s">&quot;Commission Plus&quot;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">commissions</span> <span class="o">=</span> <span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">]</span>
+
+        <span class="n">art2</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+        <span class="n">art4</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+        <span class="n">cat2</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+
+        <span class="c"># create promotions</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">Promotion</span><span class="p">(</span><span class="s">&quot;Black Friday deals&quot;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">Promotion</span><span class="p">(</span><span class="s">&quot;Basic goods&quot;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">add_promotion</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+        <span class="n">o</span><span class="o">.</span><span class="n">add_promotion</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+        <span class="n">p1</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art4</span><span class="p">)</span>
+        <span class="n">p2</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">art2</span><span class="p">)</span>
+
+        <span class="c"># create sales</span>
+        <span class="c"># agent 1</span>
+        <span class="n">sale1</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">create_sale</span><span class="p">()</span>
+        <span class="n">l1</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">art1</span><span class="p">)</span>
+        <span class="n">l2</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">art2</span><span class="p">)</span>
+        <span class="n">sale1</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+        <span class="n">sale1</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+        <span class="n">sale1</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s">&quot;pending&quot;</span><span class="p">)</span>
+
+        <span class="n">sale2</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">create_sale</span><span class="p">()</span>
+        <span class="n">l3</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">art3</span><span class="p">)</span>
+        <span class="n">sale2</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
+        <span class="n">sale2</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s">&quot;pending&quot;</span><span class="p">)</span>
+
+        <span class="c"># agent 2</span>
+        <span class="n">sale3</span> <span class="o">=</span> <span class="n">a2</span><span class="o">.</span><span class="n">create_sale</span><span class="p">()</span>
+        <span class="n">l4</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">art3</span><span class="p">)</span>
+        <span class="n">sale3</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l4</span><span class="p">)</span>
+        <span class="n">sale3</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s">&quot;pending&quot;</span><span class="p">)</span>
+
+        <span class="c"># agent 3</span>
+        <span class="n">sale5</span> <span class="o">=</span> <span class="n">a3</span><span class="o">.</span><span class="n">create_sale</span><span class="p">()</span>
+        <span class="n">l4</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">art4</span><span class="p">)</span>
+        <span class="n">l5</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">art2</span><span class="p">)</span>
+        <span class="n">l6</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">art1</span><span class="p">)</span>
+        <span class="n">sale5</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l4</span><span class="p">)</span>
+        <span class="n">sale5</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l5</span><span class="p">)</span>
+        <span class="n">sale5</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l6</span><span class="p">)</span>
+        <span class="n">sale5</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s">&quot;pending&quot;</span><span class="p">)</span>
+
+        <span class="n">sale6</span> <span class="o">=</span> <span class="n">a3</span><span class="o">.</span><span class="n">create_sale</span><span class="p">()</span>
+        <span class="n">l7</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">art3</span><span class="p">)</span>
+        <span class="n">l8</span> <span class="o">=</span> <span class="n">SaleLine</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">art2</span><span class="p">)</span>
+        <span class="n">sale6</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l7</span><span class="p">)</span>
+        <span class="n">sale6</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l8</span><span class="p">)</span>
+        <span class="n">sale6</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s">&quot;pending&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;organization&quot;</span><span class="p">:</span> <span class="n">o</span><span class="p">,</span>
+                <span class="s">&quot;commissions&quot;</span><span class="p">:</span> <span class="n">commissions</span><span class="p">}</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

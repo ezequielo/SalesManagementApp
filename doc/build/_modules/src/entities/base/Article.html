@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.entities.base.Article &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.entities.base.Article</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="Article"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article">[docs]</a><span class="k">class</span> <span class="nc">Article</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Article class</span>
+<span class="sd">    This class is responsible of modeling the articles of sale.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Article.__init__"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cod</span><span class="p">,</span> <span class="n">art_name</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">list_price</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Init method</span>
+<span class="sd">        Initializes an instance of Article class given the following parameters</span>
+
+<span class="sd">        :param cod: code for generate ean13</span>
+<span class="sd">        :param art_name: article name</span>
+<span class="sd">        :param cost: article factory cost</span>
+<span class="sd">        :param list_price: article sale cost</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ean13</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">art_name</span> <span class="o">=</span> <span class="n">art_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list_price</span> <span class="o">=</span> <span class="n">list_price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">commission</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="c"># fill ean13 code</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_ean13</span><span class="p">(</span><span class="n">cod</span><span class="p">)</span>
+
+    <span class="c"># Getters and setters</span></div>
+<div class="viewcode-block" id="Article.get_promotion"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.get_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">get_promotion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get promotion</span>
+<span class="sd">        Get article promotion</span>
+
+<span class="sd">        :return: article promotion or None if this have not promotion</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span>
+</div>
+<div class="viewcode-block" id="Article.set_promotion"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.set_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">set_promotion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">promotion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set promotion</span>
+<span class="sd">        Allow to change actual article promotion</span>
+
+<span class="sd">        :param promotion: new promotion</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span> <span class="o">=</span> <span class="n">promotion</span>
+</div>
+<div class="viewcode-block" id="Article.get_ean13"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.get_ean13">[docs]</a>    <span class="k">def</span> <span class="nf">get_ean13</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get ean13</span>
+<span class="sd">        Get article identification with ean13 algorithm</span>
+
+<span class="sd">        :return article identification</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ean13</span>
+</div>
+<div class="viewcode-block" id="Article.set_ean13"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.set_ean13">[docs]</a>    <span class="k">def</span> <span class="nf">set_ean13</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cod</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set ean13</span>
+<span class="sd">        Allow to change actual cod</span>
+
+<span class="sd">        :param cod: new code what permit generate ean13</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_ean13</span><span class="p">(</span><span class="n">cod</span><span class="p">)</span>
+        <span class="n">ean13</span> <span class="o">=</span> <span class="n">cod</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cd</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ean13</span> <span class="o">=</span> <span class="n">ean13</span>
+</div>
+<div class="viewcode-block" id="Article.get_art_name"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.get_art_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_art_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get art name</span>
+<span class="sd">        Get article name</span>
+
+<span class="sd">        :return: article name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">art_name</span>
+</div>
+<div class="viewcode-block" id="Article.set_art_name"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.set_art_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_art_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">art_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set ean13</span>
+<span class="sd">        Allow to change actual article name</span>
+
+<span class="sd">        :param art_name: new article name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">art_name</span> <span class="o">=</span> <span class="n">art_name</span>
+</div>
+<div class="viewcode-block" id="Article.get_cost"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.get_cost">[docs]</a>    <span class="k">def</span> <span class="nf">get_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get cost</span>
+<span class="sd">        Get article factory cost</span>
+
+<span class="sd">        :return: factory cost</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost</span>
+</div>
+<div class="viewcode-block" id="Article.set_cost"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.set_cost">[docs]</a>    <span class="k">def</span> <span class="nf">set_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cost</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set cost</span>
+<span class="sd">        Allow to change article factory cost</span>
+
+<span class="sd">        :param cost: factory cost</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span>
+</div>
+<div class="viewcode-block" id="Article.get_list_price"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.get_list_price">[docs]</a>    <span class="k">def</span> <span class="nf">get_list_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get list price</span>
+<span class="sd">        Get article sale cost</span>
+
+<span class="sd">        :return: sale cost</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_price</span>
+</div>
+<div class="viewcode-block" id="Article.set_list_price"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.set_list_price">[docs]</a>    <span class="k">def</span> <span class="nf">set_list_price</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_price</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set list price</span>
+<span class="sd">        Allow to change actual article sale cost</span>
+
+<span class="sd">        :param list_price: new sale cost</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list_price</span> <span class="o">=</span> <span class="n">list_price</span>
+</div>
+<div class="viewcode-block" id="Article.get_commission"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.get_commission">[docs]</a>    <span class="k">def</span> <span class="nf">get_commission</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get commission</span>
+<span class="sd">        Returns the agent commission when this article is sold</span>
+
+<span class="sd">        :return: Commission</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">commission</span>
+</div>
+<div class="viewcode-block" id="Article.set_commission"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.set_commission">[docs]</a>    <span class="k">def</span> <span class="nf">set_commission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commission</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set commission</span>
+<span class="sd">        Allow to change actual the agent commission when this article is sold</span>
+
+<span class="sd">        :param commission: new the agent commission when this article is sold</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">commission</span> <span class="o">=</span> <span class="n">commission</span>
+
+    <span class="c"># Support methods</span></div>
+<div class="viewcode-block" id="Article.__str__"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Print article principal information</span>
+
+<span class="sd">        :return: article principal information</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ean13</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">art_name</span> <span class="o">+</span> <span class="s">&quot; list price: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_price</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Article.add_promotion"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.add_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">add_promotion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">promotion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add promotion method</span>
+<span class="sd">        Allows to add a new promotion to the organization agents list</span>
+
+<span class="sd">        :param promotion: new promotion object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">promotion</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Article.remove_promotion"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.remove_promotion">[docs]</a>    <span class="k">def</span> <span class="nf">remove_promotion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Remove promotion method</span>
+<span class="sd">        This method aims to remove a given promotion from the organization promotions list</span>
+
+<span class="sd">        :param name: Promotion name to be removed</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">promotion</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Article.check_ean13"><a class="viewcode-back" href="../../../../article.html#src.entities.base.Article.Article.check_ean13">[docs]</a>    <span class="k">def</span> <span class="nf">check_ean13</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Check_ean13</span>
+<span class="sd">        Check article identification have a determinate patron</span>
+
+<span class="sd">        :param code: Number for check article identification</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">checksum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">digit</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">code</span><span class="p">)):</span>
+            <span class="n">checksum</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>
+            <span class="n">digit</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="p">(</span><span class="n">checksum</span> <span class="o">%</span> <span class="mi">10</span><span class="p">))</span> <span class="o">%</span> <span class="mi">10</span>
+        <span class="k">return</span> <span class="n">digit</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

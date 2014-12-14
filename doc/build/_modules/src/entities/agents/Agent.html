@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.entities.agents.Agent &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="Module code" href="../../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.entities.agents.Agent</h1><div class="highlight"><pre>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">src.entities.base.Sale</span> <span class="kn">import</span> <span class="n">Sale</span>
+
+
+<div class="viewcode-block" id="Agent"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent">[docs]</a><span class="k">class</span> <span class="nc">Agent</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Agent class</span>
+<span class="sd">    This class is responsible of modeling commercial agents</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Agent.__init__"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">birth_date</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Init method</span>
+<span class="sd">        Initialize an Agent object given the following parameters</span>
+
+<span class="sd">        :param agent_id: Agent ID</span>
+<span class="sd">        :param first_name: First name</span>
+<span class="sd">        :param last_name: Last name</span>
+<span class="sd">        :param birth_date: Birth date</span>
+<span class="sd">        :param base: Base salary</span>
+<span class="sd">        :param email: E-mail</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_id</span> <span class="o">=</span> <span class="n">agent_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">=</span> <span class="n">last_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth_date</span> <span class="o">=</span> <span class="n">birth_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sales</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="c"># Getter and setters</span></div>
+<div class="viewcode-block" id="Agent.get_sales"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_sales">[docs]</a>    <span class="k">def</span> <span class="nf">get_sales</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get sales method</span>
+<span class="sd">        Returns a list of the sales made by the agent that calls the method</span>
+
+<span class="sd">        :return: List of sales</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales</span>
+</div>
+<div class="viewcode-block" id="Agent.get_name"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get name method</span>
+<span class="sd">        Returns the agent&#39;s full name</span>
+
+<span class="sd">        :return: Agent&#39;s full name</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">+</span> <span class="s">&#39;, &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span>
+</div>
+<div class="viewcode-block" id="Agent.get_agent_id"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_agent_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_agent_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get agent ID</span>
+<span class="sd">        Return the current agent&#39;s ID</span>
+
+<span class="sd">        :return: Agent&#39;s ID</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_id</span>
+</div>
+<div class="viewcode-block" id="Agent.get_age"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_age">[docs]</a>    <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get age method</span>
+<span class="sd">        Returns the current agent&#39;s age</span>
+
+<span class="sd">        :return: Agent&#39;s age</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">birth_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+        <span class="n">f_bir</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">years</span> <span class="o">=</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">f_bir</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+                <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">f_bir</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">f_bir</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">years</span>
+</div>
+<div class="viewcode-block" id="Agent.get_birth_date"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_birth_date">[docs]</a>    <span class="k">def</span> <span class="nf">get_birth_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get birth_date</span>
+<span class="sd">        Getter method that returns agent&#39;s birth date</span>
+
+<span class="sd">        :return: Agent&#39;s birth date</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">birth_date</span>
+</div>
+<div class="viewcode-block" id="Agent.set_birth_date"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.set_birth_date">[docs]</a>    <span class="k">def</span> <span class="nf">set_birth_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">birth_date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set birth_date</span>
+<span class="sd">        Setter method that can set the agent&#39;s birth date.</span>
+
+<span class="sd">        :param birth_date: Birth date</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth_date</span> <span class="o">=</span> <span class="n">birth_date</span>
+</div>
+<div class="viewcode-block" id="Agent.set_agent_id"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.set_agent_id">[docs]</a>    <span class="k">def</span> <span class="nf">set_agent_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set agent ID</span>
+<span class="sd">        Setter for agent&#39;s ID attribute</span>
+
+<span class="sd">        :param new_id: New ID to be set</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_id</span> <span class="o">=</span> <span class="n">new_id</span>
+</div>
+<div class="viewcode-block" id="Agent.get_base"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_base">[docs]</a>    <span class="k">def</span> <span class="nf">get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get base</span>
+<span class="sd">        Returns the agent&#39;s base salary</span>
+
+<span class="sd">        :return: Agent&#39;s base salary</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span>
+</div>
+<div class="viewcode-block" id="Agent.set_base"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.set_base">[docs]</a>    <span class="k">def</span> <span class="nf">set_base</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set base method</span>
+<span class="sd">        Allows to set the base salary of a given agent</span>
+
+<span class="sd">        :param base: Base salary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>
+</div>
+<div class="viewcode-block" id="Agent.get_email"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_email">[docs]</a>    <span class="k">def</span> <span class="nf">get_email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get email</span>
+<span class="sd">        Returns the email of the agent who calls the method</span>
+
+<span class="sd">        :return: Agent&#39;s email</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span>
+</div>
+<div class="viewcode-block" id="Agent.set_email"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.set_email">[docs]</a>    <span class="k">def</span> <span class="nf">set_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set email</span>
+<span class="sd">        This method can replace the email attribute for the given one as a parameter</span>
+
+<span class="sd">        :param email: New email</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+</div>
+<div class="viewcode-block" id="Agent.get_org"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_org">[docs]</a>    <span class="k">def</span> <span class="nf">get_org</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get organization</span>
+<span class="sd">        Returns the organization the agent belongs</span>
+
+<span class="sd">        :return: Organization object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">org</span>
+</div>
+<div class="viewcode-block" id="Agent.set_org"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.set_org">[docs]</a>    <span class="k">def</span> <span class="nf">set_org</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Set organization method</span>
+<span class="sd">        Allows to set the organization of an given agent</span>
+
+<span class="sd">        :param org: Organization</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org</span> <span class="o">=</span> <span class="n">org</span>
+</div>
+<div class="viewcode-block" id="Agent.__str__"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        String method</span>
+<span class="sd">        Allows to print objects in a natural way</span>
+
+<span class="sd">        :return: String containing agent&#39;s info</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span>
+
+    <span class="c"># Main methods</span></div>
+<div class="viewcode-block" id="Agent.get_commissions"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_commissions">[docs]</a>    <span class="k">def</span> <span class="nf">get_commissions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get commissions</span>
+<span class="sd">        Given an agent and all the sales they have done, this method can return the commissions earned by the agent</span>
+
+<span class="sd">        :return: Value representing total earned in commissions</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">commissions</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">comm_percentage</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">sale</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sale</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+                <span class="n">article</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">get_art</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">get_commission</span><span class="p">():</span>
+                    <span class="n">comm_percentage</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">commission</span><span class="o">.</span><span class="n">get_percentage</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">cat_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">get_categories</span><span class="p">()</span>
+                    <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">cat_list</span><span class="p">:</span>
+                            <span class="k">for</span> <span class="n">art</span> <span class="ow">in</span> <span class="n">category</span><span class="o">.</span><span class="n">get_article_list</span><span class="p">():</span>
+                                <span class="k">if</span> <span class="n">art</span><span class="o">.</span><span class="n">get_ean13</span><span class="p">()</span> <span class="o">==</span> <span class="n">article</span><span class="o">.</span><span class="n">get_ean13</span><span class="p">():</span>
+                                    <span class="k">if</span> <span class="n">category</span><span class="o">.</span><span class="n">get_commission</span><span class="p">():</span>
+                                        <span class="n">commissions</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">get_commission</span><span class="p">()</span>
+                                        <span class="n">comm_percentage</span> <span class="o">=</span> <span class="n">commissions</span><span class="o">.</span><span class="n">get_percentage</span><span class="p">()</span>
+                                <span class="k">else</span><span class="p">:</span>
+                                    <span class="n">comm_percentage</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">comm_art</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">get_list_price</span><span class="p">()</span> <span class="o">*</span> <span class="n">comm_percentage</span>
+                <span class="n">comm_line</span> <span class="o">=</span> <span class="n">comm_art</span> <span class="o">*</span> <span class="n">line</span><span class="o">.</span><span class="n">get_uds</span><span class="p">()</span>
+                <span class="n">commissions</span> <span class="o">+=</span> <span class="n">comm_line</span>
+        <span class="k">return</span> <span class="n">commissions</span>
+</div>
+<div class="viewcode-block" id="Agent.get_total"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.get_total">[docs]</a>    <span class="k">def</span> <span class="nf">get_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get total allows the agent to get its salary based on the commissions earned and the salary base</span>
+
+<span class="sd">        :return: Value representing the total salary</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_commissions</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Agent.create_sale"><a class="viewcode-back" href="../../../../agent.html#src.entities.agents.Agent.Agent.create_sale">[docs]</a>    <span class="k">def</span> <span class="nf">create_sale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Create sale</span>
+
+<span class="sd">        Allows the agent to generate a new sale and add it to its sales list</span>
+<span class="sd">        :return: Sale object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">Sale</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

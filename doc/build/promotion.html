@@ -8,7 +8,7 @@
     
     <title>Class Promotion &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,15 +25,25 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
     <link rel="next" title="Class Sale" href="sale.html" />
-    <link rel="prev" title="Class Organization" href="organization.html" /> 
+    <link rel="prev" title="Class Organization" href="organization.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="sale.html" title="Class Sale"
              accesskey="N">next</a> |</li>
@@ -49,8 +59,237 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="class-promotion">
-<h1>Class Promotion<a class="headerlink" href="#class-promotion" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-src.entities.promotions.Promotion">
+<span id="class-promotion"></span><h1>Class Promotion<a class="headerlink" href="#module-src.entities.promotions.Promotion" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.entities.promotions.Promotion.Promotion">
+<em class="property">class </em><tt class="descclassname">src.entities.promotions.Promotion.</tt><tt class="descname">Promotion</tt><big>(</big><em>name</em>, <em>percentage</em>, <em>minim</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>name</em>, <em>percentage</em>, <em>minim</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method for Promotion of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; promotion name</li>
+<li><strong>percentage</strong> &#8211; percentage reduction of article</li>
+<li><strong>minim</strong> &#8211; minim reduction number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.entities.promotions.Promotion.Promotion.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.entities.promotions.Promotion'</em><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print promotion information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String instance</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.add_article">
+<tt class="descname">add_article</tt><big>(</big><em>article</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.add_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.add_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new article to promotion</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>article</strong> &#8211; new article</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">if it correct what the article is added</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.get_minim">
+<tt class="descname">get_minim</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.get_minim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.get_minim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get minim reduction percentage of article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">minim reduction percentage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.get_name">
+<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.get_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get promotion name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">promotion name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.get_org">
+<tt class="descname">get_org</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.get_org"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.get_org" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get cif of organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">cif</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.get_percentage">
+<tt class="descname">get_percentage</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.get_percentage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.get_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get reduction percentage of article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">reduction percentage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.get_promotion">
+<tt class="descname">get_promotion</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.get_promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.get_promotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get promotion instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">promotion</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.is_article">
+<tt class="descname">is_article</tt><big>(</big><em>art</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.is_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.is_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method that returns True if the article is already in the list or False if it&#8217;s not</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>art</strong> &#8211; Article to be checked</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.remove_article">
+<tt class="descname">remove_article</tt><big>(</big><em>article</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.remove_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.remove_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an article to promotion</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>article</strong> &#8211; exist article</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">if it correct what the article is removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.set_minim">
+<tt class="descname">set_minim</tt><big>(</big><em>minim</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.set_minim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.set_minim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update actual minim reduction percentage of article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>minim</strong> &#8211; new minim reduction percentage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.set_name">
+<tt class="descname">set_name</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.set_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update actual promotion name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; New promotion name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.set_org">
+<tt class="descname">set_org</tt><big>(</big><em>org</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.set_org"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.set_org" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update actual cif of organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org</strong> &#8211; new cif</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.set_percentage">
+<tt class="descname">set_percentage</tt><big>(</big><em>percentage</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.set_percentage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.set_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update actual reduction percentage of article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>percentage</strong> &#8211; new reduction percentage</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.promotions.Promotion.Promotion.set_promotion">
+<tt class="descname">set_promotion</tt><big>(</big><em>promotion</em><big>)</big><a class="reference internal" href="_modules/src/entities/promotions/Promotion.html#Promotion.set_promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.promotions.Promotion.Promotion.set_promotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update actual promotion instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>promotion</strong> &#8211; new promotion</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -65,11 +304,6 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="sale.html"
                         title="next chapter">Class Sale</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/promotion.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -93,6 +327,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="sale.html" title="Class Sale"
              >next</a> |</li>

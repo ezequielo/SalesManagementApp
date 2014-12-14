@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.controllers.AgentController &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.controllers.AgentController</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">src.entities.agents.Agent</span> <span class="kn">import</span> <span class="n">Agent</span>
+<span class="kn">from</span> <span class="nn">src.utils.Menus</span> <span class="kn">import</span> <span class="n">Menus</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="AgentController"><a class="viewcode-back" href="../../../agent_controller.html#src.controllers.AgentController.AgentController">[docs]</a><span class="k">class</span> <span class="nc">AgentController</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Agent Controller class</span>
+<span class="sd">    This controller is the responsible of options like listing, creating or deleting agents</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AgentController.__init__"><a class="viewcode-back" href="../../../agent_controller.html#src.controllers.AgentController.AgentController.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Init function</span>
+<span class="sd">        This method instantiate a AgentController class object</span>
+
+<span class="sd">        :return: Instance of AgentController</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AgentController.agent_controller"><a class="viewcode-back" href="../../../agent_controller.html#src.controllers.AgentController.AgentController.agent_controller">[docs]</a>    <span class="k">def</span> <span class="nf">agent_controller</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Agent controller method:</span>
+<span class="sd">        It&#39;s the class main method. It provides with the functions that will allow the application managing agents</span>
+
+<span class="sd">        :param org: Current organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">menu_back</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">Menus</span><span class="o">.</span><span class="n">agent_menu</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">AgentController</span><span class="o">.</span><span class="n">list_agents</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">AgentController</span><span class="o">.</span><span class="n">create_agent</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">AgentController</span><span class="o">.</span><span class="n">remove_agent</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AgentController.list_agents"><a class="viewcode-back" href="../../../agent_controller.html#src.controllers.AgentController.AgentController.list_agents">[docs]</a>    <span class="k">def</span> <span class="nf">list_agents</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List agents method</span>
+<span class="sd">        Responsible of displaying a list of agents that belong to the organization</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">agent_list</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AgentController.create_agent"><a class="viewcode-back" href="../../../agent_controller.html#src.controllers.AgentController.AgentController.create_agent">[docs]</a>    <span class="k">def</span> <span class="nf">create_agent</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create agent method</span>
+<span class="sd">        This function aims to create a new agent and add it to the organization&#39;s agent list</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">a_id</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Agent ID: &quot;</span><span class="p">)</span>
+        <span class="n">firstname</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;First name: &quot;</span><span class="p">)</span>
+        <span class="n">lastname</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Last name: &quot;</span><span class="p">)</span>
+        <span class="n">birthdate</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Birth date name: &quot;</span><span class="p">)</span>
+        <span class="n">email</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;e-Mail: &quot;</span><span class="p">)</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Base: &quot;</span><span class="p">))</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">a_id</span><span class="p">,</span> <span class="n">firstname</span><span class="p">,</span> <span class="n">lastname</span><span class="p">,</span> <span class="n">birthdate</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+        <span class="n">org</span><span class="o">.</span><span class="n">add_agent</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;The agent with ID &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">agent_id</span> <span class="o">+</span> <span class="s">&quot;has been successfully created and added to the company&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="AgentController.remove_agent"><a class="viewcode-back" href="../../../agent_controller.html#src.controllers.AgentController.AgentController.remove_agent">[docs]</a>    <span class="k">def</span> <span class="nf">remove_agent</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove agent method</span>
+<span class="sd">        Removes an agent from the organization&#39;s agent list</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">agent_list</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;#&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - First name: &quot;</span><span class="o">+</span><span class="n">agent</span><span class="o">.</span><span class="n">first_name</span><span class="o">+</span><span class="s">&quot; Last name&quot;</span>
+                  <span class="o">+</span> <span class="n">agent</span><span class="o">.</span><span class="n">last_name</span> <span class="o">+</span> <span class="s">&quot; ID: &quot;</span> <span class="o">+</span> <span class="n">agent</span><span class="o">.</span><span class="n">agent_id</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">selection</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">selection</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">selection</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">selection</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Select the agent to be deleted: &quot;</span><span class="p">))</span>
+        <span class="n">org</span><span class="o">.</span><span class="n">agent_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">selection</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

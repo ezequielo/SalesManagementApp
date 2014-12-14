@@ -8,7 +8,7 @@
     
     <title>Class Article &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,15 +25,25 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
     <link rel="next" title="Class Category" href="category.html" />
-    <link rel="prev" title="Class Agent" href="agent.html" /> 
+    <link rel="prev" title="Class Agent" href="agent.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="category.html" title="Class Category"
              accesskey="N">next</a> |</li>
@@ -49,8 +59,273 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="class-article">
-<h1>Class Article<a class="headerlink" href="#class-article" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-src.entities.base.Article">
+<span id="class-article"></span><h1>Class Article<a class="headerlink" href="#module-src.entities.base.Article" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.entities.base.Article.Article">
+<em class="property">class </em><tt class="descclassname">src.entities.base.Article.</tt><tt class="descname">Article</tt><big>(</big><em>cod</em>, <em>art_name</em>, <em>cost</em>, <em>list_price</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Article class
+This class is responsible of modeling the articles of sale.</p>
+<dl class="method">
+<dt id="src.entities.base.Article.Article.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>cod</em>, <em>art_name</em>, <em>cost</em>, <em>list_price</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method
+Initializes an instance of Article class given the following parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cod</strong> &#8211; code for generate ean13</li>
+<li><strong>art_name</strong> &#8211; article name</li>
+<li><strong>cost</strong> &#8211; article factory cost</li>
+<li><strong>list_price</strong> &#8211; article sale cost</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.entities.base.Article.Article.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.entities.base.Article'</em><a class="headerlink" href="#src.entities.base.Article.Article.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print article principal information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">article principal information</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.add_promotion">
+<tt class="descname">add_promotion</tt><big>(</big><em>promotion</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.add_promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.add_promotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add promotion method
+Allows to add a new promotion to the organization agents list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>promotion</strong> &#8211; new promotion object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.entities.base.Article.Article.check_ean13">
+<em class="property">static </em><tt class="descname">check_ean13</tt><big>(</big><em>code</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.check_ean13"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.check_ean13" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check_ean13
+Check article identification have a determinate patron</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>code</strong> &#8211; Number for check article identification</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.get_art_name">
+<tt class="descname">get_art_name</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.get_art_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.get_art_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get art name
+Get article name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">article name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.get_commission">
+<tt class="descname">get_commission</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.get_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.get_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get commission
+Returns the agent commission when this article is sold</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Commission</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.get_cost">
+<tt class="descname">get_cost</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.get_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.get_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get cost
+Get article factory cost</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">factory cost</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.get_ean13">
+<tt class="descname">get_ean13</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.get_ean13"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.get_ean13" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ean13
+Get article identification with ean13 algorithm</p>
+<p>:return article identification</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.get_list_price">
+<tt class="descname">get_list_price</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.get_list_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.get_list_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list price
+Get article sale cost</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">sale cost</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.get_promotion">
+<tt class="descname">get_promotion</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.get_promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.get_promotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get promotion
+Get article promotion</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">article promotion or None if this have not promotion</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.remove_promotion">
+<tt class="descname">remove_promotion</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.remove_promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.remove_promotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove promotion method
+This method aims to remove a given promotion from the organization promotions list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; Promotion name to be removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.set_art_name">
+<tt class="descname">set_art_name</tt><big>(</big><em>art_name</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.set_art_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.set_art_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set ean13
+Allow to change actual article name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>art_name</strong> &#8211; new article name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.set_commission">
+<tt class="descname">set_commission</tt><big>(</big><em>commission</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.set_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.set_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set commission
+Allow to change actual the agent commission when this article is sold</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commission</strong> &#8211; new the agent commission when this article is sold</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.set_cost">
+<tt class="descname">set_cost</tt><big>(</big><em>cost</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.set_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.set_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set cost
+Allow to change article factory cost</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cost</strong> &#8211; factory cost</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.set_ean13">
+<tt class="descname">set_ean13</tt><big>(</big><em>cod</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.set_ean13"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.set_ean13" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set ean13
+Allow to change actual cod</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cod</strong> &#8211; new code what permit generate ean13</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.set_list_price">
+<tt class="descname">set_list_price</tt><big>(</big><em>list_price</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.set_list_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.set_list_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set list price
+Allow to change actual article sale cost</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>list_price</strong> &#8211; new sale cost</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Article.Article.set_promotion">
+<tt class="descname">set_promotion</tt><big>(</big><em>promotion</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Article.html#Article.set_promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Article.Article.set_promotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set promotion
+Allow to change actual article promotion</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>promotion</strong> &#8211; new promotion</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -65,11 +340,6 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="category.html"
                         title="next chapter">Class Category</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/article.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -93,6 +363,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="category.html" title="Class Category"
              >next</a> |</li>

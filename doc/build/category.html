@@ -8,7 +8,7 @@
     
     <title>Class Category &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,15 +25,25 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
     <link rel="next" title="Class Commission" href="commission.html" />
-    <link rel="prev" title="Class Article" href="article.html" /> 
+    <link rel="prev" title="Class Article" href="article.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="commission.html" title="Class Commission"
              accesskey="N">next</a> |</li>
@@ -49,8 +59,271 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="class-category">
-<h1>Class Category<a class="headerlink" href="#class-category" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-src.entities.base.Category">
+<span id="class-category"></span><h1>Class Category<a class="headerlink" href="#module-src.entities.base.Category" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.entities.base.Category.Category">
+<em class="property">class </em><tt class="descclassname">src.entities.base.Category.</tt><tt class="descname">Category</tt><big>(</big><em>id_cat</em>, <em>cat_name</em>, <em>desc</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Category class
+This class is responsible of modeling the category of many articles.</p>
+<dl class="method">
+<dt id="src.entities.base.Category.Category.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>id_cat</em>, <em>cat_name</em>, <em>desc</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method
+Initializes an instance of Category class given the following parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id_cat</strong> &#8211; category identification</li>
+<li><strong>cat_name</strong> &#8211; category name</li>
+<li><strong>desc</strong> &#8211; description</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.entities.base.Category.Category.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.entities.base.Category'</em><a class="headerlink" href="#src.entities.base.Category.Category.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print principal category information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Category information</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.add_article">
+<tt class="descname">add_article</tt><big>(</big><em>art</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.add_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.add_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add article
+Allow to add an article to article list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>art</strong> &#8211; new article</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.get_article_list">
+<tt class="descname">get_article_list</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.get_article_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.get_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get article list
+Return an article list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">article list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.get_cat_name">
+<tt class="descname">get_cat_name</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.get_cat_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.get_cat_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get category name
+Return a category name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Category name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.get_commission">
+<tt class="descname">get_commission</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.get_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.get_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get commission
+Returns the actual commission of sale an product</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Commission</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.get_desc">
+<tt class="descname">get_desc</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.get_desc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.get_desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get description
+Return a category description</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">category description</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.get_id_cat">
+<tt class="descname">get_id_cat</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.get_id_cat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.get_id_cat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get id cat
+Return actual identification of category</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">identification category</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.get_org">
+<tt class="descname">get_org</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.get_org"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.get_org" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get organization cif
+Return the organization cif</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">organization cif</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.is_article">
+<tt class="descname">is_article</tt><big>(</big><em>art</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.is_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.is_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method that returns True if the article is in the list or False if it is not
+:param art: Article to be checked</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.remove_article">
+<tt class="descname">remove_article</tt><big>(</big><em>art</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.remove_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.remove_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove article
+Allow to remove an article to article list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>art</strong> &#8211; article by this is removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.set_article_list">
+<tt class="descname">set_article_list</tt><big>(</big><em>article_list</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.set_article_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.set_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set article list
+Allow to change the actual article list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>article_list</strong> &#8211; new article list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.set_cat_name">
+<tt class="descname">set_cat_name</tt><big>(</big><em>cat_name</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.set_cat_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.set_cat_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set category name
+Allow to change the actual category name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cat_name</strong> &#8211; new category name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.set_commission">
+<tt class="descname">set_commission</tt><big>(</big><em>commission</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.set_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.set_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set commission
+Allow to change the actual commission of sale an product</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">actual commission</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.set_desc">
+<tt class="descname">set_desc</tt><big>(</big><em>desc</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.set_desc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.set_desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set description
+Allow to change the actual category description</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>desc</strong> &#8211; new category description</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.set_id_cat">
+<tt class="descname">set_id_cat</tt><big>(</big><em>id_cat</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.set_id_cat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.set_id_cat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get id cat
+Allow to change the actual identification of category</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id_cat</strong> &#8211; new category identification</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Category.Category.set_org">
+<tt class="descname">set_org</tt><big>(</big><em>org</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Category.html#Category.set_org"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Category.Category.set_org" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set organization cif
+Allow to change actual organization cif</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org</strong> &#8211; new organization cif</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -65,11 +338,6 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="commission.html"
                         title="next chapter">Class Commission</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/category.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -93,6 +361,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="commission.html" title="Class Commission"
              >next</a> |</li>

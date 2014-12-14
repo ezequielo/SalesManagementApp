@@ -2,7 +2,7 @@ Class Category
 ==============
 
 
-.. autoclass:: src.entities.base.Category
+.. automodule:: src.entities.base.Category
    :members:
    :undoc-members:
    :special-members:

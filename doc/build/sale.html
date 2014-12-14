@@ -8,7 +8,7 @@
     
     <title>Class Sale &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,15 +25,25 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
     <link rel="next" title="Class Sale Line" href="saleline.html" />
-    <link rel="prev" title="Class Promotion" href="promotion.html" /> 
+    <link rel="prev" title="Class Promotion" href="promotion.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="saleline.html" title="Class Sale Line"
              accesskey="N">next</a> |</li>
@@ -49,8 +59,179 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="class-sale">
-<h1>Class Sale<a class="headerlink" href="#class-sale" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-src.entities.base.Sale">
+<span id="class-sale"></span><h1>Class Sale<a class="headerlink" href="#module-src.entities.base.Sale" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.entities.base.Sale.Sale">
+<em class="property">class </em><tt class="descclassname">src.entities.base.Sale.</tt><tt class="descname">Sale</tt><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sale is the class of simulate a real Sale</p>
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.__init__">
+<tt class="descname">__init__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method for Sale with a default state and actual date generated</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.entities.base.Sale.Sale.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.entities.base.Sale'</em><a class="headerlink" href="#src.entities.base.Sale.Sale.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print sale information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String instance</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.add_line">
+<tt class="descname">add_line</tt><big>(</big><em>line</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.add_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.add_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new sale line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> &#8211; new sale line</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.entities.base.Sale.Sale.generate_date">
+<em class="property">static </em><tt class="descname">generate_date</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.generate_date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.generate_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the actual date</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">actual date</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.get_date">
+<tt class="descname">get_date</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.get_date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.get_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get date generated</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">date generated</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.get_lines">
+<tt class="descname">get_lines</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.get_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.get_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sale lines list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">return sale lines list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.get_state">
+<tt class="descname">get_state</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.get_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.get_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get actual sale state</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">sale state</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.get_total">
+<tt class="descname">get_total</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.get_total"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.get_total" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sale total</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">number total</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.print_invoice">
+<tt class="descname">print_invoice</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.print_invoice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.print_invoice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a formal sale invoice</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Information necessary how String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.remove_line">
+<tt class="descname">remove_line</tt><big>(</big><em>id_art</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.remove_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.remove_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove sale line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id_art</strong> &#8211; article identification</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.set_lines">
+<tt class="descname">set_lines</tt><big>(</big><em>lines</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.set_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.set_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>update exist sale line</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lines</strong> &#8211; new sale line list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.base.Sale.Sale.set_state">
+<tt class="descname">set_state</tt><big>(</big><em>state</em><big>)</big><a class="reference internal" href="_modules/src/entities/base/Sale.html#Sale.set_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.base.Sale.Sale.set_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update exist sale state</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> &#8211; new sale state</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -65,11 +246,6 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="saleline.html"
                         title="next chapter">Class Sale Line</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/sale.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -93,6 +269,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="saleline.html" title="Class Sale Line"
              >next</a> |</li>

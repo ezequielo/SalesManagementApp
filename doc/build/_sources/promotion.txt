@@ -2,7 +2,7 @@ Class Promotion
 ===============
 
 
-.. autoclass:: src.entities.promotions.Promotion
+.. automodule:: src.entities.promotions.Promotion
    :members:
    :undoc-members:
    :special-members:

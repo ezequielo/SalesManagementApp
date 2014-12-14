@@ -8,7 +8,7 @@
     
     <title>Class Organization &mdash; SalesManagementAppp 0.2 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,15 +25,25 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
     <link rel="next" title="Class Promotion" href="promotion.html" />
-    <link rel="prev" title="Class Commission" href="commission.html" /> 
+    <link rel="prev" title="Class Commission" href="commission.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
   </head>
   <body>
+
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="promotion.html" title="Class Promotion"
              accesskey="N">next</a> |</li>
@@ -49,8 +59,348 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="class-organization">
-<h1>Class Organization<a class="headerlink" href="#class-organization" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-src.entities.org.Organization">
+<span id="class-organization"></span><h1>Class Organization<a class="headerlink" href="#module-src.entities.org.Organization" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.entities.org.Organization.Organization">
+<em class="property">class </em><tt class="descclassname">src.entities.org.Organization.</tt><tt class="descname">Organization</tt><big>(</big><em>cif</em>, <em>org_name</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Organization class
+This class aim to models the organization objects and it also acts like an container of the organization&#8217;s info
+such as list of agents, promotions, categories, etc.</p>
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>cif</em>, <em>org_name</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method
+Creates a new instance of Organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cif</strong> &#8211; Organization&#8217;s ID</li>
+<li><strong>org_name</strong> &#8211; Organization&#8217;s name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Organization object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.entities.org.Organization.Organization.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.entities.org.Organization'</em><a class="headerlink" href="#src.entities.org.Organization.Organization.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>String method
+This method allows printing Organization objects in a easier way</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String containing organization info</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.add_agent">
+<tt class="descname">add_agent</tt><big>(</big><em>agent</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.add_agent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.add_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add agent method
+Allows to add a new agent to the organization agents list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>agent</strong> &#8211; Agent object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.add_category">
+<tt class="descname">add_category</tt><big>(</big><em>category</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.add_category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.add_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add category method
+Allows to add a new category to the organization agents list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>category</strong> &#8211; Category object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.add_promotion">
+<tt class="descname">add_promotion</tt><big>(</big><em>promotion</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.add_promotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.add_promotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add promotion method
+Allows to add a new promotion to the organization agents list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>promotion</strong> &#8211; Promotion object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.annual_balance">
+<tt class="descname">annual_balance</tt><big>(</big><em>year</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.annual_balance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.annual_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Annual balance
+Given a year, this method can return the total revenue of the year</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> &#8211; Year to be evaluated</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Total revenue</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.best_agent">
+<tt class="descname">best_agent</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.best_agent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.best_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Best agent
+This method evaluates the agents who work at the organization an
+returns the best on according to the sales results</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Agent object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.get_agent_list">
+<tt class="descname">get_agent_list</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.get_agent_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.get_agent_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get agent list
+Return a list of agent who work at the organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Agent objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.get_categories">
+<tt class="descname">get_categories</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.get_categories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.get_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get categories list
+Return a list of categories of the organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Categories objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.get_cif">
+<tt class="descname">get_cif</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.get_cif"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.get_cif" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get CIF
+This method will return the organization ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Organization ID</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.get_org_name">
+<tt class="descname">get_org_name</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.get_org_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.get_org_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get organization name
+Returns an string containing the organization name of the organization object that calls the method</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Organization name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.get_promotions">
+<tt class="descname">get_promotions</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.get_promotions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.get_promotions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get promotions list
+Return a list of promotions of the organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Promotions objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.quarter_balance">
+<tt class="descname">quarter_balance</tt><big>(</big><em>year</em>, <em>quarter</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.quarter_balance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.quarter_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quarter balance
+Given a quarter, this method can return the total revenue of the the quarter</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>quarter</strong> &#8211; Quarter to be evaluated</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Total revenue in the quarter</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.remove_agent">
+<tt class="descname">remove_agent</tt><big>(</big><em>agent</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.remove_agent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.remove_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove agent method
+This method aims to remove a given agent from the organization agent list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>agent</strong> &#8211; Agent to be removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.remove_category">
+<tt class="descname">remove_category</tt><big>(</big><em>category</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.remove_category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.remove_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove category method
+This method aims to remove a given category from the organization category list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>category</strong> &#8211; Category to be removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.remove_promotions">
+<tt class="descname">remove_promotions</tt><big>(</big><em>promotion</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.remove_promotions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.remove_promotions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove promotion method
+This method aims to remove a given promotion from the organization promotions list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>promotion</strong> &#8211; Promotion to be removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.set_agents">
+<tt class="descname">set_agents</tt><big>(</big><em>agent_list</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.set_agents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.set_agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set agents
+Allows to replace the agents list of an organization with a new given list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>agent_list</strong> &#8211; Agent list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.set_categories">
+<tt class="descname">set_categories</tt><big>(</big><em>categories</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.set_categories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.set_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set categories
+Allows to replace the categories list of an organization with a new given list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>categories</strong> &#8211; Categories list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.set_cif">
+<tt class="descname">set_cif</tt><big>(</big><em>cif</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.set_cif"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.set_cif" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set CIF
+This method allows changing the organization CIF given a new ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cif</strong> &#8211; New organization ID</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.set_org_name">
+<tt class="descname">set_org_name</tt><big>(</big><em>org_name</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.set_org_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.set_org_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set organization name
+Setter method that allows changing the organization name with for a give new name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org_name</strong> &#8211; New name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="src.entities.org.Organization.Organization.set_promotions">
+<tt class="descname">set_promotions</tt><big>(</big><em>promotions</em><big>)</big><a class="reference internal" href="_modules/src/entities/org/Organization.html#Organization.set_promotions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.entities.org.Organization.Organization.set_promotions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set promotions
+Allows to replace the promotions list of an organization with a new given list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>promotions</strong> &#8211; Promotions list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -65,11 +415,6 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="promotion.html"
                         title="next chapter">Class Promotion</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/organization.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -93,6 +438,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="promotion.html" title="Class Promotion"
              >next</a> |</li>

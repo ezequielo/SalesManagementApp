@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class Category Controller &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="index.html" />
+    <link rel="next" title="Class Organization Controller" href="org_controller.html" />
+    <link rel="prev" title="Class Agent Controller" href="agent_controller.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="org_controller.html" title="Class Organization Controller"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="agent_controller.html" title="Class Agent Controller"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-src.controllers.CategoryController">
+<span id="class-category-controller"></span><h1>Class Category Controller<a class="headerlink" href="#module-src.controllers.CategoryController" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="src.controllers.CategoryController.CategoryController">
+<em class="property">class </em><tt class="descclassname">src.controllers.CategoryController.</tt><tt class="descname">CategoryController</tt><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Category controller
+It&#8217;s the main controller for every function related to managing categories and articles</p>
+<dl class="method">
+<dt id="src.controllers.CategoryController.CategoryController.__init__">
+<tt class="descname">__init__</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init function
+Creates and returns an instance of CategoryController</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A CategoryController object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="src.controllers.CategoryController.CategoryController.__module__">
+<tt class="descname">__module__</tt><em class="property"> = 'src.controllers.CategoryController'</em><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.add_commission">
+<em class="property">static </em><tt class="descname">add_commission</tt><big>(</big><em>article</em>, <em>commissions</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.add_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.add_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add commission
+Given an article and a commission objects, this function can add the commission to the article.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>article</strong> &#8211; Current article</li>
+<li><strong>commissions</strong> &#8211; List of commission objects</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.cat_controller">
+<em class="property">static </em><tt class="descname">cat_controller</tt><big>(</big><em>org</em>, <em>commissions</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.cat_controller"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.cat_controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cat. controller
+This method represent the controller that will allow the application to manage categories and articles</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>org</strong> &#8211; Organization</li>
+<li><strong>commissions</strong> &#8211; List of commissions objects</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.create_article">
+<em class="property">static </em><tt class="descname">create_article</tt><big>(</big><em>category</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.create_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.create_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create article method
+This method is responsible of creating articles objects and adding
+them into the organization via the current category</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>category</strong> &#8211; Current category</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.create_category">
+<em class="property">static </em><tt class="descname">create_category</tt><big>(</big><em>org</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.create_category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.create_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create category
+This fuction is able to create a new category and insert it into the organization&#8217;s categories list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org</strong> &#8211; Organization</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.list_articles">
+<em class="property">static </em><tt class="descname">list_articles</tt><big>(</big><em>org</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.list_articles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.list_articles" title="Permalink to this definition">¶</a></dt>
+<dd><p>List articles
+Method responsible of printing all the articles in the organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org</strong> &#8211; Organization</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.list_categories">
+<em class="property">static </em><tt class="descname">list_categories</tt><big>(</big><em>org</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.list_categories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.list_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>List categories
+Method responsible of printing all the categories in the organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org</strong> &#8211; Organization</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.remove_article">
+<em class="property">static </em><tt class="descname">remove_article</tt><big>(</big><em>org</em>, <em>a</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.remove_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.remove_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove article
+This method is able to remove an article from the organization</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>org</strong> &#8211; Organization</li>
+<li><strong>a</strong> &#8211; Current article</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.remove_category">
+<em class="property">static </em><tt class="descname">remove_category</tt><big>(</big><em>org</em>, <em>category</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.remove_category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.remove_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove category
+Method for removing categories from the organization&#8217;s categories list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>org</strong> &#8211; Organization</li>
+<li><strong>category</strong> &#8211; Category to be removed</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.remove_commission">
+<em class="property">static </em><tt class="descname">remove_commission</tt><big>(</big><em>article</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.remove_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.remove_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove commission
+This method removes the commission from article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>article</strong> &#8211; Current article</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.select_article">
+<em class="property">static </em><tt class="descname">select_article</tt><big>(</big><em>org</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.select_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.select_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select article
+Allows the user to select an article. The selected article will be
+the current article until another article is selected</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org</strong> &#8211; Organization</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Current article object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.select_category">
+<em class="property">static </em><tt class="descname">select_category</tt><big>(</big><em>org</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.select_category"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.select_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select category
+Allows the user to see a list of the current categories
+and select any category from the previous list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>org</strong> &#8211; Organization</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Category object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.select_commission">
+<em class="property">static </em><tt class="descname">select_commission</tt><big>(</big><em>commissions</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.select_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.select_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select commission
+Displays a list of the available commissions and allows the user to select a commission from the list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commissions</strong> &#8211; List of commission objects</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Commission object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.set_commission">
+<em class="property">static </em><tt class="descname">set_commission</tt><big>(</big><em>category</em>, <em>commissions</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.set_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.set_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set commission
+Given a category and a commission from the list, this
+method allows the app to set commissions into the category</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>category</strong> &#8211; Current category</li>
+<li><strong>commissions</strong> &#8211; List of commissions objects</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.subart_controller">
+<em class="property">static </em><tt class="descname">subart_controller</tt><big>(</big><em>org</em>, <em>commissions</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.subart_controller"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.subart_controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sub-article controller
+This is the main controller for everything related to articles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>org</strong> &#8211; Organization</li>
+<li><strong>commissions</strong> &#8211; List of commission objects</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.subcat_controller">
+<em class="property">static </em><tt class="descname">subcat_controller</tt><big>(</big><em>org</em>, <em>commissions</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.subcat_controller"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.subcat_controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subcategory controller
+Responsible of managing all options related to categories</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>org</strong> &#8211; Organization</li>
+<li><strong>commissions</strong> &#8211; List of commission objects</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="src.controllers.CategoryController.CategoryController.unset_commission">
+<em class="property">static </em><tt class="descname">unset_commission</tt><big>(</big><em>category</em><big>)</big><a class="reference internal" href="_modules/src/controllers/CategoryController.html#CategoryController.unset_commission"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.controllers.CategoryController.CategoryController.unset_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unset commission
+Allows to unset the commission from the category</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>category</strong> &#8211; Current category</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="agent_controller.html"
+                        title="previous chapter">Class Agent Controller</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="org_controller.html"
+                        title="next chapter">Class Organization Controller</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="org_controller.html" title="Class Organization Controller"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="agent_controller.html" title="Class Agent Controller"
+             >previous</a> |</li>
+        <li><a href="index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

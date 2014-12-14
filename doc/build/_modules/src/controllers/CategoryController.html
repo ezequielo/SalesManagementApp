@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>src.controllers.CategoryController &mdash; SalesManagementAppp 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="SalesManagementAppp 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for src.controllers.CategoryController</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">src.entities.base.Category</span> <span class="kn">import</span> <span class="n">Category</span>
+<span class="kn">from</span> <span class="nn">src.entities.base.Article</span> <span class="kn">import</span> <span class="n">Article</span>
+<span class="kn">from</span> <span class="nn">src.utils.Menus</span> <span class="kn">import</span> <span class="n">Menus</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;ezequiel&#39;</span>
+
+
+<div class="viewcode-block" id="CategoryController"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController">[docs]</a><span class="k">class</span> <span class="nc">CategoryController</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Category controller</span>
+<span class="sd">    It&#39;s the main controller for every function related to managing categories and articles</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CategoryController.__init__"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Init function</span>
+<span class="sd">        Creates and returns an instance of CategoryController</span>
+
+<span class="sd">        :return: A CategoryController object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.cat_controller"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.cat_controller">[docs]</a>    <span class="k">def</span> <span class="nf">cat_controller</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">commissions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cat. controller</span>
+<span class="sd">        This method represent the controller that will allow the application to manage categories and articles</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :param commissions: List of commissions objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">menu_back</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">Menus</span><span class="o">.</span><span class="n">cat_main_menu</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">list_categories</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">list_articles</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">create_category</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">subcat_controller</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">commissions</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">subart_controller</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">commissions</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.list_categories"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.list_categories">[docs]</a>    <span class="k">def</span> <span class="nf">list_categories</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List categories</span>
+<span class="sd">        Method responsible of printing all the categories in the organization</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.list_articles"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.list_articles">[docs]</a>    <span class="k">def</span> <span class="nf">list_articles</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List articles</span>
+<span class="sd">        Method responsible of printing all the articles in the organization</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">category</span><span class="o">.</span><span class="n">article_list</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.create_category"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.create_category">[docs]</a>    <span class="k">def</span> <span class="nf">create_category</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create category</span>
+<span class="sd">        This fuction is able to create a new category and insert it into the organization&#39;s categories list</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">cat_id</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Category ID: &quot;</span><span class="p">)</span>
+        <span class="n">cat_name</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Category name: &quot;</span><span class="p">)</span>
+        <span class="n">cat_desc</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Category description: &quot;</span><span class="p">)</span>
+
+        <span class="n">category</span> <span class="o">=</span> <span class="n">Category</span><span class="p">(</span><span class="n">cat_id</span><span class="p">,</span> <span class="n">cat_name</span><span class="p">,</span> <span class="n">cat_desc</span><span class="p">)</span>
+        <span class="n">org</span><span class="o">.</span><span class="n">addCategory</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.subcat_controller"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.subcat_controller">[docs]</a>    <span class="k">def</span> <span class="nf">subcat_controller</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">commissions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Subcategory controller</span>
+<span class="sd">        Responsible of managing all options related to categories</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :param commissions: List of commission objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">category</span> <span class="o">=</span> <span class="n">CategoryController</span><span class="o">.</span><span class="n">select_category</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+        <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">menu_back</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">Menus</span><span class="o">.</span><span class="n">subcat_menu</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">remove_category</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">commissions</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">unset_commission</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.select_category"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.select_category">[docs]</a>    <span class="k">def</span> <span class="nf">select_category</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select category</span>
+<span class="sd">        Allows the user to see a list of the current categories</span>
+<span class="sd">        and select any category from the previous list</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :return: Category object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">cat_object</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;# &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">category</span><span class="o">.</span><span class="n">id_cat</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; %: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">category</span><span class="o">.</span><span class="n">cat_name</span><span class="p">))</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">selected_cat</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">selected_cat</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">selected_cat</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">selected_cat</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Select a category: &quot;</span><span class="p">))</span>
+            <span class="n">cat_object</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="p">[</span><span class="n">selected_cat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Category &quot;</span><span class="o">+</span><span class="n">cat_object</span><span class="o">.</span><span class="n">cat_name</span> <span class="o">+</span> <span class="s">&quot; selected&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cat_object</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.remove_category"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.remove_category">[docs]</a>    <span class="k">def</span> <span class="nf">remove_category</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove category</span>
+<span class="sd">        Method for removing categories from the organization&#39;s categories list</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :param category: Category to be removed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.set_commission"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.set_commission">[docs]</a>    <span class="k">def</span> <span class="nf">set_commission</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">commissions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set commission</span>
+<span class="sd">        Given a category and a commission from the list, this</span>
+<span class="sd">        method allows the app to set commissions into the category</span>
+
+<span class="sd">        :param category: Current category</span>
+<span class="sd">        :param commissions: List of commissions objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">commission</span> <span class="o">=</span> <span class="n">CategoryController</span><span class="o">.</span><span class="n">select_commission</span><span class="p">(</span><span class="n">commissions</span><span class="p">)</span>
+        <span class="n">category</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="n">commission</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;The commission has been successfully set&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.unset_commission"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.unset_commission">[docs]</a>    <span class="k">def</span> <span class="nf">unset_commission</span><span class="p">(</span><span class="n">category</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unset commission</span>
+<span class="sd">        Allows to unset the commission from the category</span>
+
+<span class="sd">        :param category: Current category</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">category</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;The commission has been successfully removed&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.create_article"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.create_article">[docs]</a>    <span class="k">def</span> <span class="nf">create_article</span><span class="p">(</span><span class="n">category</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create article method</span>
+<span class="sd">        This method is responsible of creating articles objects and adding</span>
+<span class="sd">        them into the organization via the current category</span>
+
+<span class="sd">        :param category: Current category</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">code</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Code: &quot;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Article name: &quot;</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Cost: &quot;</span><span class="p">))</span>
+        <span class="n">listprice</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;List price: &quot;</span><span class="p">))</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">listprice</span><span class="p">)</span>
+        <span class="n">category</span><span class="o">.</span><span class="n">add_article</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.subart_controller"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.subart_controller">[docs]</a>    <span class="k">def</span> <span class="nf">subart_controller</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">commissions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sub-article controller</span>
+<span class="sd">        This is the main controller for everything related to articles.</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :param commissions: List of commission objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">selected_article</span> <span class="o">=</span> <span class="n">CategoryController</span><span class="o">.</span><span class="n">select_article</span><span class="p">(</span><span class="n">org</span><span class="p">)</span>
+        <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">menu_back</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="n">Menus</span><span class="o">.</span><span class="n">art_menu</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">remove_article</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">selected_article</span><span class="p">)</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">add_commission</span><span class="p">(</span><span class="n">selected_article</span><span class="p">,</span> <span class="n">commissions</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">CategoryController</span><span class="o">.</span><span class="n">remove_commission</span><span class="p">(</span><span class="n">selected_article</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">menu_back</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.select_article"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.select_article">[docs]</a>    <span class="k">def</span> <span class="nf">select_article</span><span class="p">(</span><span class="n">org</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select article</span>
+<span class="sd">        Allows the user to select an article. The selected article will be</span>
+<span class="sd">        the current article until another article is selected</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :return: Current article object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">art</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">while</span> <span class="n">art</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">art_code</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Article code: &quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">category</span><span class="o">.</span><span class="n">article_list</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">ean13</span> <span class="o">==</span> <span class="n">art_code</span><span class="p">:</span>
+                        <span class="n">art</span> <span class="o">=</span> <span class="n">article</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Article &quot;</span><span class="o">+</span><span class="n">art</span><span class="o">.</span><span class="n">ean13</span><span class="o">+</span><span class="s">&quot; selected.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">art</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.remove_article"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.remove_article">[docs]</a>    <span class="k">def</span> <span class="nf">remove_article</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove article</span>
+<span class="sd">        This method is able to remove an article from the organization</span>
+
+<span class="sd">        :param org: Organization</span>
+<span class="sd">        :param a: Current article</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">remove</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">org</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">category</span><span class="o">.</span><span class="n">article_list</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">article</span> <span class="o">==</span> <span class="n">a</span><span class="p">:</span>
+                    <span class="n">remove</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">if</span> <span class="n">remove</span><span class="p">:</span>
+                <span class="n">category</span><span class="o">.</span><span class="n">remove_article</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;The article has been successfully removed&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.select_commission"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.select_commission">[docs]</a>    <span class="k">def</span> <span class="nf">select_commission</span><span class="p">(</span><span class="n">commissions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select commission</span>
+<span class="sd">        Displays a list of the available commissions and allows the user to select a commission from the list.</span>
+
+<span class="sd">        :param commissions: List of commission objects</span>
+<span class="sd">        :return: Commission object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">comm_object</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">commission</span> <span class="ow">in</span> <span class="n">commissions</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;# &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">commission</span><span class="o">.</span><span class="n">com_name</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">commission</span><span class="o">.</span><span class="n">percentage</span><span class="p">))</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">selected_comm2</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">selected_comm2</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">selected_comm2</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">selected_comm2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Select a commission: &quot;</span><span class="p">))</span>
+            <span class="n">comm_object</span> <span class="o">=</span> <span class="n">commissions</span><span class="p">[</span><span class="n">selected_comm2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">comm_object</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.add_commission"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.add_commission">[docs]</a>    <span class="k">def</span> <span class="nf">add_commission</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">commissions</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add commission</span>
+<span class="sd">        Given an article and a commission objects, this function can add the commission to the article.</span>
+
+<span class="sd">        :param article: Current article</span>
+<span class="sd">        :param commissions: List of commission objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">commission</span> <span class="o">=</span> <span class="n">CategoryController</span><span class="o">.</span><span class="n">select_commission</span><span class="p">(</span><span class="n">commissions</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="n">commission</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;The commission has been successfully set&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="CategoryController.remove_commission"><a class="viewcode-back" href="../../../category_controller.html#src.controllers.CategoryController.CategoryController.remove_commission">[docs]</a>    <span class="k">def</span> <span class="nf">remove_commission</span><span class="p">(</span><span class="n">article</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove commission</span>
+<span class="sd">        This method removes the commission from article</span>
+
+<span class="sd">        :param article: Current article</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">set_commission</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;The commission has been successfully removed&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SalesManagementAppp 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, E. Rodriguez, J.I. Fernández.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
