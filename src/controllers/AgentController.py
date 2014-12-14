@@ -49,8 +49,8 @@ class AgentController():
         :param org: Organization
         """
         for agent in org.agent_list:
-            print "-"*30
-            print agent
+            print("-"*30)
+            print(agent)
 
     @staticmethod
     def create_agent(org):
@@ -69,7 +69,7 @@ class AgentController():
         base = float(raw_input("Base: "))
         a = Agent(a_id, firstname, lastname, birthdate, base, email)
         org.addAgent(a)
-        print "The agent with ID " + a.agent_id + "has been successfully created and added to the company"
+        print("The agent with ID " + a.agent_id + "has been successfully created and added to the company")
 
     @staticmethod
     def remove_agent(org):
@@ -82,8 +82,8 @@ class AgentController():
 
         i = 1
         for agent in org.agent_list:
-            print "-"*30
-            print "#"+str(i) + " - First name: "+agent.firstname+" Last name" + agent.lastname + " ID: "+agent.agent_id
+            print("-"*30)
+            print("#"+str(i) + " - First name: "+agent.firstname+" Last name" + agent.lastname + " ID: "+agent.agent_id)
             i += 1
         selection = 0
         while selection < 1 or selection > i:

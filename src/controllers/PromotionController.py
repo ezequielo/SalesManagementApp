@@ -57,8 +57,8 @@ class PromotionController():
         """
 
         for promotion in org.promotions:
-            print "-"*30
-            print promotion
+            print("-"*30)
+            print(promotion)
 
     @staticmethod
     def create_promotion(org):
@@ -73,7 +73,7 @@ class PromotionController():
         perc = int(raw_input("Promotion percentage: "))
         prom = Promotion(name, perc, 0)
         org.addPromotion(prom)
-        print "The promotion " + prom.name + " has been successfully created"
+        print("The promotion " + prom.name + " has been successfully created")
 
     @staticmethod
     def select_promotion(org):
@@ -87,8 +87,8 @@ class PromotionController():
 
         i = 1
         for promotion in org.promotions:
-            print "-"*30
-            print "# " + str(i) + " " + promotion.name + " %: " + str(promotion.perc)
+            print("-"*30)
+            print("# " + str(i) + " " + promotion.name + " %: " + str(promotion.perc))
             i += 1
         selected_prom = 0
         while selected_prom < 1 or selected_prom > i:
@@ -139,7 +139,7 @@ class PromotionController():
         promotion = PromotionController.select_promotion(org)
         article = PromotionController.select_article(org)
         promotion.addArticle(article)
-        print "Article successfully added"
+        print("Article successfully added")
 
     @staticmethod
     def remove_article(org):
@@ -153,4 +153,4 @@ class PromotionController():
         promotion = PromotionController.select_promotion(org)
         article = PromotionController.select_article(org)
         promotion.removeArticle(article)
-        print "Article successfully removed"
+        print("Article successfully removed")

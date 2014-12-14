@@ -61,8 +61,8 @@ class OrgController:
         while not menu_back:
             option = Menus.org_metrics_menu()
             if option == 1:
-                print "The best agent is..."
-                print org.best_agent()
+                print("The best agent is...")
+                print(org.best_agent())
             elif option == 2:
                 OrgController.quarter_balance(org)
             elif option == 3:
@@ -81,7 +81,7 @@ class OrgController:
 
         quarter = OrgController.get_quarter()
         revenue = org.quarter_balance(quarter)
-        print "Total revenue in Q" + str(quarter) + ": " + str(revenue)
+        print("Total revenue in Q" + str(quarter) + ": " + str(revenue))
 
     @staticmethod
     def annual_balance(org):
@@ -94,7 +94,7 @@ class OrgController:
 
         year = OrgController.get_year()
         revenue = org.anual_balance(year)
-        print "Total revenue in " + str(year) + ": " + str(revenue)
+        print("Total revenue in " + str(year) + ": " + str(revenue))
 
     @staticmethod
     def get_quarter():

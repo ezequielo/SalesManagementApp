@@ -57,8 +57,8 @@ class CategoryController():
         """
 
         for category in org.categories:
-            print "-"*30
-            print category
+            print("-"*30)
+            print(category)
 
     @staticmethod
     def list_articles(org):
@@ -71,7 +71,7 @@ class CategoryController():
 
         for category in org.categories:
             for article in category.list_articulos:
-                print article
+                print(article)
 
     @staticmethod
     def create_category(org):
@@ -129,14 +129,14 @@ class CategoryController():
         cat_object = None
         i = 1
         for category in org.categories:
-            print "-"*30
-            print "# " + str(i) + " " + str(category.id_cat) + " %: " + str(category.cat_name)
+            print("-"*30)
+            print("# " + str(i) + " " + str(category.id_cat) + " %: " + str(category.cat_name))
             i += 1
         selected_cat = 0
         while selected_cat < 1 or selected_cat > i:
             selected_cat = int(raw_input("Select a category: "))
             cat_object = org.categories[selected_cat-1]
-        print "Category "+cat_object.cat_name + " selected"
+        print("Category "+cat_object.cat_name + " selected")
         return cat_object
 
     @staticmethod
@@ -163,7 +163,7 @@ class CategoryController():
 
         commission = CategoryController.select_commission(commissions)
         category.set_commission(commission)
-        print "The commission has been successfully set"
+        print("The commission has been successfully set")
 
     @staticmethod
     def unset_commission(category):
@@ -175,7 +175,7 @@ class CategoryController():
         """
 
         category.set_commission(None)
-        print "The commission has been successfully removed"
+        print("The commission has been successfully removed")
 
     @staticmethod
     def create_article(category):
@@ -236,7 +236,7 @@ class CategoryController():
                 for article in category.list_articulos:
                     if article.ean13 == art_code:
                         art = article
-        print "Article "+art.ean13+" selected."
+        print("Article "+art.ean13+" selected.")
         return art
 
     @staticmethod
@@ -256,7 +256,7 @@ class CategoryController():
                     remove = True
             if remove:
                 category.remove_articulo(a)
-        print "The article has been successfully removed"
+        print("The article has been successfully removed")
 
     @staticmethod
     def select_commission(commissions):
@@ -271,7 +271,7 @@ class CategoryController():
         comm_object = None
         i = 1
         for commission in commissions:
-            print "# " + str(i) + " " + commission.com_name + " " + str(commission.perc)
+            print("# " + str(i) + " " + commission.com_name + " " + str(commission.perc))
             i += 1
         selected_comm2 = 0
         while selected_comm2 < 1 or selected_comm2 > i:
@@ -291,7 +291,7 @@ class CategoryController():
 
         commission = CategoryController.select_commission(commissions)
         article.set_commission(commission)
-        print "The commission has been successfully set"
+        print("The commission has been successfully set")
 
     @staticmethod
     def remove_commission(article):
@@ -302,4 +302,4 @@ class CategoryController():
         :param article: Current article
         """
         article.set_commission(None)
-        print "The commission has been successfully removed"
+        print("The commission has been successfully removed")

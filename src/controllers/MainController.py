@@ -32,4 +32,4 @@ class MainController:
         elif option == 2:
             SalesController.manage_sales(self, self.org)
         elif option == 0:
-            print "\nBye!\n"
+            print("\nBye!\n")
