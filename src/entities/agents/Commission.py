@@ -34,8 +34,16 @@ class Commission:
         """
         return self.com_name
 
-    def set_com_name(self):
-        return self.com_name
+    def set_com_name(self, com_name):
+        """
+
+        Set commission name
+        Allows to reset the commission name to a new value
+
+        :param com_name: Commission name
+
+        """
+        self.com_name = com_name
 
     def get_percentage(self):
         """
