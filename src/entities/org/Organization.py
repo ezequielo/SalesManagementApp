@@ -93,7 +93,7 @@ class Organization():
         """
         self.categories = categories
 
-    def get_org_name(self, org_name):
+    def get_org_name(self):
         """
 
         Get organization name
@@ -102,7 +102,7 @@ class Organization():
         :return: Organization name
 
         """
-        return org_name
+        return self.org_name
 
     def set_org_name(self, org_name):
         """
