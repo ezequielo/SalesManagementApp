@@ -33,7 +33,7 @@ class Test_SalesController(TestCase):
         sample_data = DataLoader.load_sampledata()
         org = sample_data["organization"]
         art_code = mock(Article)
-        when(art_code).get_ean13().thenReturn("123776789087")
+        when(art_code).get_ean13().thenReturn("1237767890875")
         boolean = False
         for category in org.categories:
             for article in category.article_list:
