@@ -28,7 +28,7 @@ class MainController:
         """
         option = Menus.main_controller_menu()
         if option == 1:
-            OrgController.printOrg(self, self.org, self.commissions)
+            OrgController.manage_org(self, self.org, self.commissions)
         elif option == 2:
             SalesController.manage_sales(self, self.org)
         elif option == 0:

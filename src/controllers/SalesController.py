@@ -153,7 +153,7 @@ class SalesController:
     def print_summary(agent):
         """
         Prints a summary of the current agent, including full name, email, age and salary
-        
+
         :param agent: Current selected agent
         :return: Void
         """
