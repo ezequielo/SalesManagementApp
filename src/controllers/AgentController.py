@@ -48,10 +48,9 @@ class AgentController():
 
         :param org: Organization
         """
-        if org.agent_list is not None:
-            for agent in org.agent_list:
-                print("-"*30)
-                print(agent)
+        for agent in org.agent_list:
+            print("-"*30)
+            print(agent)
 
     @staticmethod
     def create_agent(org):
