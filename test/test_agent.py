@@ -33,3 +33,9 @@ class TestAgent(TestCase):
         sale.add_line(line)
 
         self.assertEqual(a1.get_commissions(), 1)
+
+        sale2 = a1.create_sale()
+        line1 = SaleLine(1, art1)
+        sale2.add_line(line1)
+
+        self.assertEqual(a1.get_commissions(), 2)

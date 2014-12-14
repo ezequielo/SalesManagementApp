@@ -23,12 +23,22 @@ class TestSaleLine(TestCase):
 
         line1 = mock(SaleLine)
         line2 = mock(SaleLine)
+        line3 = mock(SaleLine)
 
         when(line1).get_subtotal().thenReturn(20.0)
         when(line2).get_subtotal().thenReturn(10.0)
+        when(line3).get_subtotal().thenReturn(20.0)
 
         sale = Sale()
         sale.add_line(line1)
         sale.add_line(line2)
 
         self.assertEqual(sale.get_total(), 30.0)
+
+        sale.add_line(line3)
+
+        self.assertEqual(sale.get_total(), 50.0)
+
+        sale.remove_line(line2)
+
+        self.assertEqual(sale.get_total(), 40.0)
