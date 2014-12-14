@@ -10,6 +10,7 @@ class Article:
     """
     def __init__(self, cod, art_name, cost, list_price):
         """
+
         Init method
         Initializes an instance of Article class given the following parameters
 
