@@ -232,29 +232,8 @@ class Agent:
         :return: Value representing the total salary
 
         """
-        commissions = 0.0
-        comm_percentage = 0.0
-        article = None
-        line = None
-        for sale in self.sales:
-            for line in sale.get_lines():
-                article = line.get_art()
-                if article.get_commission():
-                    comm_percentage = article.commission.get_percentage()
-                else:
-                    cat_list = self.org.get_categories()
-                    for category in cat_list:
-                        for art in category.get_article_list():
-                            if art.get_ean13() == article.get_ean13():
-                                if category.get_commission():
-                                    comm_percentage = category.commission.get_percentage()
-                            else:
-                                comm_percentage = 0.0
-            comm_art = article.get_list_price() * comm_percentage
-            comm_line = comm_art * line.get_uds()
-            commissions += comm_line
-        total = self.base + commissions
-        return total
+
+        return self.base + self.get_commissions()
 
     def create_sale(self):
         """
