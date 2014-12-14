@@ -11,6 +11,13 @@ class SalesController:
     """
 
     def __init__(self):
+        """
+        Init method
+        Instantiate an object of the class SalesController
+
+        :return: SalesController object
+        """
+
         pass
 
     @staticmethod
@@ -21,8 +28,8 @@ class SalesController:
 
         :param mc: MainController
         :param org: Demo Organization
-        :return: Void
         """
+
         selected_agent = SalesController.select_agent(mc, org.agent_list)
         while True:
             option = Menus.sales_main_menu()
@@ -46,6 +53,7 @@ class SalesController:
         :param agent_list: Agent list
         :return: Chosen agent
         """
+
         selected_agent = None
         a_id = raw_input("Agent ID: ")
         for agent in agent_list:
@@ -64,8 +72,8 @@ class SalesController:
         Prints a list of sales of the current agent
 
         :param agent: Current selected agent
-        :return: Void
         """
+
         print("Sales:\n")
         for sale in agent.sales:
             print(sale)
@@ -78,8 +86,8 @@ class SalesController:
 
         :param agent: Selected agent
         :param org: Organization
-        :return: Void
         """
+
         lines = []
         menu_back = False
         while not menu_back:
@@ -99,8 +107,8 @@ class SalesController:
 
         :param org: Organization
         :param lines: List of lines in the current sale
-        :return: Void
         """
+
         selected_article = None
         while selected_article is None:
             art_code = raw_input("Article code: ")
@@ -120,8 +128,8 @@ class SalesController:
 
         :param lines: List of SaleLines
         :param agent: Current selected agent
-        :return: Void
         """
+
         if lines:
             sale = agent.crearVenta()
             for line in lines:
@@ -135,8 +143,8 @@ class SalesController:
         This method allows users to delete a sale from the current agent
 
         :param agent: Current agent
-        :return: Void
         """
+
         print("\nSelect a sale to remove:\n")
         i = 1
         for sale in agent.sales:
@@ -155,8 +163,8 @@ class SalesController:
         Prints a summary of the current agent, including full name, email, age and salary
 
         :param agent: Current selected agent
-        :return: Void
         """
+
         print("Agent Info\n")
         print("\t Name:\t" + agent.firstname + " " + agent.lastname)
         print("\t Age:\t" + str(agent.get_edad()))
