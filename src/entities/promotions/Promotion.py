@@ -153,7 +153,7 @@ class Promotion:
 
         """
 
-        if self.is_article(article):
+        if not self.is_article(article):
             self.article_list.append(article)
             return True
         else:
