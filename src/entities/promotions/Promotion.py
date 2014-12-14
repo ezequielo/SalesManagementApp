@@ -130,6 +130,19 @@ class Promotion:
         return self.name + " - " + str(self.percentage)
 
     # Main methods
+
+    def is_article(self, art):
+        """
+        Helper method that returns True if the article is already in the list or False if it's not
+
+        :param art: Article to be checked
+        """
+
+        for article in self.article_list:
+            if article.ean13 == art.ean13:
+                return True
+        return False
+
     def add_article(self, article):
         """
 
@@ -139,14 +152,12 @@ class Promotion:
         :return: if it correct what the article is added
 
         """
-        article.set_promotion(self)
-        self.article_list.append(article)
-        for art in self.article_list:
-            if art.ean13 == article.ean13:
-                self.article_list.append(article)
-                return True
-            else:
-                return False
+
+        if self.is_article(article):
+            self.article_list.append(article)
+            return True
+        else:
+            return False
 
     def remove_article(self, article):
         """
@@ -157,10 +168,9 @@ class Promotion:
         :return: if it correct what the article is removed
 
         """
-        article.set_promotion(None)
-        for art in self.article_list:
-            if art.ean13 == article.ean13:
-                self.article_list.remove(article)
-                return True
-            else:
-                return False
+
+        if self.is_article(article):
+            self.article_list.remove(article)
+            return True
+        else:
+            return False
