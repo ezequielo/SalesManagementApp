@@ -1,39 +1,35 @@
-from SalesController import SalesController
-from OrgController import OrgController
-
 __author__ = 'ezequiel'
+
+from src.controllers.SalesController import SalesController
+from src.controllers.OrgController import OrgController
+from src.utils.Menus import Menus
 
 
 class MainController:
+    """
+    MainController class
+    MainController is the class that models the controller for the terminal-based interface.
+    """
+    def __init__(self, sample_data):
+        """
+        Init method for MainController
 
-    def __init__(self, dict):
-        self.org = dict["organization"]
-        self.commissions = dict["commissions"]
+        :param sample_data: Dictionary with the organization's data
+        :return: An instance of MainController
+        """
 
-    def printMenu(self):
-            print "#"*60 + "\n" + "\t"*4 + "Welcome to SalesManagementApp\n" +"#"*60
-            print "-"*60
-            print "1. Manage Organizations"
-            print "2. Agent area"
-            print "0. Exit"
-            print "-"*60
-            option = int(raw_input("Please, select an option: "))
-            while option != 1 and option != 2 and option != 0:
+        self.org = sample_data["organization"]
+        self.commissions = sample_data["commissions"]
 
-                print "\nInvalid option !\n"
+    def menu_redirect(self):
+        """
+        Redirect the user to another controller depending on the selected option
+        """
 
-                print "-"*60
-                print "1. Organization"
-                print "2. Sales Management"
-                print "0. Exit"
-                print "-"*60
-                option = int(raw_input("Please, select an option: "))
-
-            if option==1:
-                OrgController.printOrg(self, self.org,self.commissions)
-
-            elif option==2:
-                SalesController.manageSales(self, self.org)
-
-            elif option==0:
-                print "\nBye!\n"
+        option = Menus.main_controller_menu()
+        if option == 1:
+            OrgController.manage_org(self, self.org, self.commissions)
+        elif option == 2:
+            SalesController.manage_sales(self, self.org)
+        elif option == 0:
+            print("\nBye!\n")
