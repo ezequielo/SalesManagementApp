@@ -1,10 +1,3 @@
-from datetime import datetime
-from src.entities.org.Organization import Organization
-from src.entities.agents.Agent import Agent
-from src.entities.base.Category import Category
-from src.entities.promotions.Promotion import Promotion
-from src.entities.base.Article import Article
-from src.entities.agents.Commission import Commission
 from src.utils.Menus import Menus
 from src.controllers.PromotionController import PromotionController
 from src.controllers.CategoryController import CategoryController
@@ -12,7 +5,11 @@ from src.controllers.AgentController import AgentController
 
 __author__ = 'ezequiel'
 
+
 class OrgController:
+
+    def __init__(self):
+        pass
 
     @staticmethod
     def manage_org(mc, org, commissions):
@@ -30,7 +27,6 @@ class OrgController:
                 OrgController.metrics_controller(org)
             elif option == 0:
                 mc.menu_redirect()
-
 
     @staticmethod
     def metrics_controller(org):
@@ -57,7 +53,7 @@ class OrgController:
     def annual_balance(org):
         year = OrgController.get_year()
         revenue = org.anual_balance(year)
-        print "Total revenue in " +str (year) + ": " + str(revenue)
+        print "Total revenue in " + str(year) + ": " + str(revenue)
 
     @staticmethod
     def get_quarter():
