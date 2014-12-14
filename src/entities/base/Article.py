@@ -210,4 +210,5 @@ class Article:
         checksum = 0
         for i, digit in enumerate(reversed(code)):
             checksum += int(digit) * 3 if (i % 2 == 0) else int(digit)
-        return (10 - (checksum % 10)) % 10
+            digit = (10 - (checksum % 10)) % 10
+        return digit

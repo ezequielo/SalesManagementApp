@@ -48,7 +48,7 @@ class Menus():
             print("0. Back")
             print("-"*60)
             option = raw_input("Option: ")
-            print "-"*60
+            print("-"*60)
         return int(option)
 
     @staticmethod

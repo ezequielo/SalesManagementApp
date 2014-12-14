@@ -142,4 +142,4 @@ class Sale:
         cad += "\n"
         cad = cad + "\t\tTotal: " + str(self.get_total())
         cad = cad + "\n" + "################################################"
-        print cad
+        print(cad)
