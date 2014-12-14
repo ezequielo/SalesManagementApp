@@ -78,9 +78,9 @@ class OrgController:
 
         :param org: Organization
         """
-
+        year = raw_input("Input a year: ")
         quarter = OrgController.get_quarter()
-        revenue = org.quarter_balance(quarter)
+        revenue = org.quarter_balance(quarter, year)
         print("Total revenue in Q" + str(quarter) + ": " + str(revenue))
 
     @staticmethod
