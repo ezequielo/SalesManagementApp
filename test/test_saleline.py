@@ -5,6 +5,7 @@ from unittest import TestCase
 from src.entities.base.SaleLine import SaleLine
 from src.entities.base.Article import Article
 
+
 class TestSaleLine(TestCase):
     """
     Test sale line
@@ -16,7 +17,8 @@ class TestSaleLine(TestCase):
         """
         Test get_subtotal()
         This method aims to find bugs in the get_subtotal() function
-        
+        so that they can be fixed in an early stage of development
+
         """
 
         article = mock(Article)
